@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link
@@ -9,19 +9,99 @@
     <link href="/common.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/fonts/oswald.css" />
-    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <link rel="shortcut icon" href="/static../../static/images/img_icon_favicon.svg">
     <title>Каталог</title>
   </head>
   <body>
     @@include('header/index.html')
-    <main class="catalog-main">
-      <div class="container">
-        <h1 class="title-block title-block_one">Каталог</h1>
-        <h2 class="title-block title-block_two">
-          Вы находитесь на странице каталога
-        </h2>
-      </div>
+
+    <!-- Main -->
+    <main class="main">
+
+      <!-- Categories -->
+      <section class="catalog">
+
+        <div class="catalog__wrap container">
+
+          <h1 class="catalog__title">Category products</h1>
+
+          <!-- Section nav -->
+          <nav class="catalog__nav section-navigation">
+
+            @@include('navigation/index.html', {
+              "tag": "a",
+              "class": "section-navigation__link",
+              "href": "/",
+              "text": "Home"
+            })
+
+            @@include('navigation/index.html', {
+              "tag": "a",
+              "class": "section-navigation__link section-navigation__link--active",
+              "href": "/pages/catalog",
+              "text": "Catalog"
+            })
+
+          </nav>
+
+          <!-- Categories -->
+          <ul class="catalog__list">
+
+            <li class="catalog__item catalog__item--first">
+              <a class="catalog__link" href="/pages/category">Apparel kids</a>
+            </li>
+
+            <li class="catalog__item catalog__item--second">
+              <a class="catalog__link" href="/pages/category">Holiday shop</a>
+            </li>
+
+            <li class="catalog__item catalog__item--third">
+              <a class="catalog__link" href="/pages/category">Toys</a>
+            </li>
+
+            <li class="catalog__item catalog__item--fourth">
+              <a class="catalog__link" href="/pages/category">Accessories</a>
+            </li>
+
+            <li class="catalog__item catalog__item--fifth">
+              <a class="catalog__link" href="/pages/category">Sale</a>
+            </li>
+
+            <li class="catalog__item catalog__item--sixth">
+              <a class="catalog__link" href="/pages/category">Apparel<br>adults</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </section>
+
+      <!-- Information -->
+      <section class="description">
+
+        <div class="description__wrap container">
+
+          <h1 class="description__title">Product description</h1>
+
+          <p class="description__text">
+            Interactive doll Zapf Creation Baby Born Sister can drink from a bottle and almost really cry. You can even bathe her, just like a little sister.
+          </p>
+
+          <p class="description__text">
+            A toy with a height of 43 cm bends its knees, the head rotates, it can stand upright. Such a doll will be an excellent choice for a gift for a girl from 4 years old.
+          </p>
+
+          <p class="description__text">
+            The set includes a miniature set of fashionable clothes, a hairbrush, a bottle for water, a pair of hairpins and elastic bands for hair, as well as two bracelets: one for the doll, the other for her young mistress.
+          </p>
+
+        </div>
+
+      </section>
+
     </main>
+
     @@include('footer/index.html')
     <script src="index.js"></script>
   </body>

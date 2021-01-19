@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat:wght@300;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link href="/common.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/fonts/oswald.css" />
+    <link rel="shortcut icon" href="/static../../static/images/img_icon_favicon.svg">
+    <title>Contacts us</title>
+  </head>
+
+  <body>
+    @@include('header/index.html')
+
+    <!-- Main -->
+    <main class="main">
+
+      <!-- Contacts -->
+      <section class="contacts">
+
+        <div class="contacts__wrap container">
+
+          <h1 class="contacts__title">Contact us</h1>
+
+          <!-- Sections nav -->
+          <nav class="contacts__nav section-navigation">
+
+            @@include('navigation/index.html', {
+              "tag": "a",
+              "class": "section-navigation__link",
+              "href": "/",
+              "text": "Home"
+            })
+
+            @@include('navigation/index.html', {
+              "tag": "a",
+              "class": "section-navigation__link section-navigation__link--active",
+              "href": "#",
+              "text": "Contact us"
+            })
+
+          </nav>
+
+          <!-- Feedback form -->
+          <section class="contacts__feedback">
+
+            <h2 class="contacts__feedback-title">Feedback form</h2>
+
+            <!-- Form -->
+            <form class="contacts__feedback-form" method="post" action="index.html">
+
+              <fieldset class="contacts__feedback-field">
+
+                <div class="contacts__feedback-wrapper">
+
+                  <label for="name" class="contacts__feedback-label">Name</label>
+                  <input class="contacts__feedback-input" id="name" type="text" name="name" value="" placeholder="Ivan Ivanov" required autofocus>
+
+                </div>
+
+                <div class="contacts__feedback-wrapper--half">
+
+                  <div class="contacts__feedback-wrapper contacts__feedback-wrapper--margined">
+
+                    <label for="phone" class="contacts__feedback-label">Phone</label>
+                    <input class="contacts__feedback-input" id="phone" type="tel" name="phone" value="" required>
+
+                  </div>
+
+                  <div class="contacts__feedback-wrapper">
+
+                    <label for="mail" class="contacts__feedback-label">Email</label>
+                    <input  class="contacts__feedback-input" id="mail" type="email" name="mail" value="" required>
+
+                  </div>
+
+                </div>
+
+
+                <label for="message" class="contacts__feedback-label">Message</label>
+                <textarea class="contacts__feedback-textarea" id="message" name="message" rows="8" cols="80" required></textarea>
+
+                <div class="contacts__feedback-information">
+                  <input class="contacts__feedback-input contacts__feedback-input--hidden" id="agreement" type="checkbox" name="agreement" required>
+                  <label class="contacts__feedback-agreement" for="agreement">By clicking on the button, you consent to the processing of your personal data</label>
+                </div>
+
+                @@include('buttons/index.html', {
+                  "tag": "button",
+                  "class": "contacts__feedback-button",
+                  "href": "#",
+                  "type": "submit",
+                  "name": "send",
+                  "text": "Submit"
+                })
+
+              </fieldset>
+
+            </form>
+
+            <!-- Addition information -->
+            <div class="contacts__information-wrap">
+
+              <p class="contacts__information">
+                Our support team are on-hand to assist with any issues you are experiencing.
+              </p>
+
+              <p class="contacts__information">
+                Please use the form to contact us with your needs. Send us a message and we'll respond as soon as possible.
+              </p>
+
+              <p class="contacts__information contacts__information--highlighted">
+                An expert is waiting to help you!
+              </p>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    @@include('footer/index.html')
+
+    <script src="index.js"></script>
+
+  </body>
+
+</html>

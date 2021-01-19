@@ -1,8 +1,164 @@
-<footer>
-  <div class="container">
-    <span class="title-block title-block_one">Footer</span>
-    <a href="/">Главная</a>
-    <a href="/pages/catalog">Каталог</a>
-    <a href="/pages/toys">Игрушки</a>
-  </div>
-</footer>
+<footer class="footer">
+
+       <div class="footer__wrap container">
+
+         <!-- Sections -->
+         <ul class="footer__sections">
+
+           <!-- Navigation -->
+           <li class="footer__section">
+
+             <p class="footer__section-title">Navigation</p>
+
+               <ul class="footer__section-list">
+
+                 <li class="footer__section-item">
+                   <a class="footer__section-link" href="#">About us</a>
+                 </li>
+                 <li class="footer__section-item">
+                   <a class="footer__section-link" href="#">Blog</a>
+                 </li>
+                 <li class="footer__section-item">
+                   <a class="footer__section-link" href="#">Design services</a>
+                 </li>
+                 <li class="footer__section-item">
+                   <a class="footer__section-link" href="#">Featured on</a>
+                 </li>
+                 <li class="footer__section-item">
+                   <a class="footer__section-link" href="#">2018 Holiday catalog</a>
+                 </li>
+                 <li class="footer__section-item">
+                   <a class="footer__section-link" href="#">Shop by designer</a>
+                 </li>
+
+              </ul>
+
+            </li>
+
+           <!-- Customer information -->
+           <li class="footer__section">
+
+             <p class="footer__section-title">Customer information</p>
+
+             <ul class="footer__section-list">
+
+               <li class="footer__section-item">
+                 <a class="footer__section-link" href="#">Contact us</a>
+               </li>
+               <li class="footer__section-item">
+                 <a class="footer__section-link" href="#">Sale exclusions</a>
+               </li>
+               <li class="footer__section-item">
+                 <a class="footer__section-link" href="#">Shipping & returns</a>
+               </li>
+               <li class="footer__section-item">
+                 <a class="footer__section-link" href="#">Terms & conditions</a>
+               </li>
+               <li class="footer__section-item">
+                 <a class="footer__section-link" href="#">Privacy policy</a>
+               </li>
+               <li class="footer__section-item">
+                 <a class="footer__section-link" href="#">Search</a>
+               </li>
+
+            </ul>
+
+          </li>
+
+           <!-- Connect -->
+           <li class="footer__section">
+
+             <p class="footer__section-title">Connect</p>
+
+               <!-- Subscription -->
+               <form class="footer__section-form" method="post" action="handler.php">
+                 <input class="footer__section-input" type="text" name="mailto" value="" placeholder="Email">
+
+                 @@include('buttons/index.html', {
+                   "tag": "button",
+                   "href": "#",
+                   "class": "footer__section-button",
+                   "type": "submit",
+                   "text": "Join",
+                 })
+                 
+               </form>
+
+               <!-- Social -->
+               <ul class="footer__section-social social">
+
+                 <li class="social__item">
+                   <a class="social__link social__link--facebook" href="#">Facebook</a>
+                 </li>
+
+                 <li class="social__item">
+                   <a class="social__link social__link--twitter" href="#">Twitter</a>
+                 </li>
+
+                 <li class="social__item">
+                   <a class="social__link social__link--pinterest" href="#">Pinterest</a>
+                 </li>
+
+                 <li class="social__item">
+                   <a class="social__link social__link--instagram" href="#">Instagram</a>
+                 </li>
+
+               </ul>
+
+           </li>
+
+         </ul>
+
+         <!-- Additional information -->
+         <ul class="footer__information">
+
+           <li class="footer__information-item">
+
+             <span class="footer__information-description">Company rating</span>
+
+             <div class="footer__information-list">
+
+               <div class="footer__information-wrap">
+
+                 <input class="footer__information-radio footer__information-radio--first" id="rate-1" type="radio" name="rating" value="1">
+                 <label class="footer__information-label footer__information-label--first" for="rate-1">Company rating - one star</label>
+
+                 <input class="footer__information-radio footer__information-radio--second" id="rate-2" type="radio" name="rating" value="2">
+                 <label class="footer__information-label footer__information-label--second" for="rate-2">Company rating - two stars</label>
+
+                 <input class="footer__information-radio footer__information-radio--third" id="rate-3" type="radio" name="rating" value="3">
+                 <label class="footer__information-label footer__information-label--third" for="rate-3">Company rating - three stars</label>
+
+                 <input class="footer__information-radio footer__information-radio--fourth" id="rate-4" type="radio" name="rating" value="4">
+                 <label class="footer__information-label footer__information-label--fourth" for="rate-4">Company rating - four stars</label>
+
+                 <input class="footer__information-radio footer__information-radio--fifth" id="rate-5" type="radio" name="rating" value="5">
+                 <label class="footer__information-label footer__information-label--fifth" for="rate-5">Company rating - five stars</label>
+
+               </div>
+
+             </div>
+
+          </li>
+
+           <li class="footer__information-item">
+
+             <span class="footer__information-copyright">
+               Copyright &#169; 2018 Dlk <span class="footer__information-dot">&#183;</span> Design life kids
+             </span>
+
+           </li>
+
+           <li class="footer__information-item">
+
+             <span class="footer__information-owner">
+               <a class="footer__information-developer" href="https://directlinedev.com/">Wed design - Direct line development</a>
+             </span>
+
+           </li>
+
+         </ul>
+
+       </div>
+
+     </footer>
