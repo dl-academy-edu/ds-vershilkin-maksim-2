@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat:wght@300;700&family=Open+Sans&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -9,36 +10,319 @@
     <link href="/common.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/fonts/oswald.css" />
-    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <link rel="shortcut icon" href="/static/images/img_icon_favicon.svg">
     <title>Главная</title>
   </head>
   <body>
-    @@include('header/index.html')
-    <main class="index-main">
-      <div class="container">
-        <h1 class="title-block title-block_one">Главная</h1>
-        <h2 class="title-block title-block_two">
-          Вы находитесь на главной странице
-        </h2>
-        <div class="parallax-card">
-          <div class="parallax-card__wrapper-img">
-            <img
-              class="parallax-card__img"
-              src="static/images/cactus.jpg"
-              alt="Картинка кактуса"
-            />
-          </div>
 
-          <div class="parallax-card__description">
-            <p class="parallax-card__paragraph">Кактус маминой подруги</p>
-            <p class="parallax-card__paragraph">
-              Не нужно поливать и никогда не сохнет
-            </p>
-          </div>
-        </div>
-      </div>
+    @@include('header/index.html')
+
+    <!-- Main -->
+    <main class="main">
+
+      <!-- Slider -->
+       <section class="slider">
+
+         <div class="slider__wrap container">
+
+           <div class="slider__elements">
+
+             <span class="slider__number">01</span>
+
+             <div class="slider__content">
+
+               <ul class="slider__nav">
+
+                 <li class="slider__nav-item">
+                   <button class="slider__nav-button slider__nav-button--active" type="button" name="button" value="1">Slide 1</button>
+                 </li>
+
+                 <li class="slider__nav-item">
+                   <button class="slider__nav-button" type="button" name="button" value="2">Slide 2</button>
+                 </li>
+
+                 <li class="slider__nav-item">
+                   <button class="slider__nav-button" type="button" name="button" value="3">Slide 3</button>
+                 </li>
+
+                 <li class="slider__nav-item">
+                   <button class="slider__nav-button" type="button" name="button" value="4">Slide 4</button>
+                 </li>
+
+               </ul>
+
+               <div class="slider__collection">
+
+                 <h1 class="slider__title">The ooh noo collection</h1>
+
+                 <p class="slider__description">Designed in Slovenia</p>
+
+                 @@include('buttons/index.html', {
+                   "tag": "button",
+                   "class": "slider__button",
+                   "type": "button",
+                   "text": "Explore now",
+                 })
+
+               </div>
+
+             </div>
+
+           </div>
+
+           <figure class="slider__stuff-wrap">
+             <img class="slider__stuff-image" src="static/images/img_slide_1.png" alt="Toy image" width="636" height="461">
+           </figure>
+
+           <div class="slider__information">
+             <span class="slider__information-content">Free (continental) USA shipping on all orders of $100 USD or more!</span>
+           </div>
+
+         </div>
+
+       </section>
+
+       <!-- Categories -->
+       <section class="categories">
+
+         <div class="categories__wrap container">
+
+           <h2 class="categories__title">Category products</h2>
+
+           <ul class="categories__list">
+
+             <li class="categories__list-item categories__list-item--first">
+               <a class="categories__list-link" href="#">Apparel<br>kids</a>
+             </li>
+
+             <li class="categories__list-item categories__list-item--second">
+               <a class="categories__list-link" href="#">Holiday<br>shop</a>
+             </li>
+
+             <li class="categories__list-item categories__list-item--third">
+               <a class="categories__list-link" href="#">Toys</a>
+             </li>
+
+             <li class="categories__list-item categories__list-item--fourth">
+               <a class="categories__list-link" href="#">Accessories</a>
+             </li>
+
+           </ul>
+
+           <!-- Category navigation -->
+           <button class="categories__button categories__button--left" type="button" name="categories-left">Previous category</button>
+           <button class="categories__button  categories__button--right" type="button" name="categories-right">Next category</button>
+           <p class="categories__nav-information">
+             Modern finds for the modern home. Curated goods by unique designers around the world from fashion to furniture for kids and adults.
+           </p>
+
+         </div>
+
+       </section>
+
+       <!-- Benefits -->
+       <section class="benefits">
+
+         <div class="benefits__wrap container">
+
+           <figure class="benefits__side">
+             <img class="benefits__side-image" src="static/images/img_benefit_1.jpg" alt="Benefit image" width="480" height="559">
+           </figure>
+
+           <div class="benefits__information">
+
+             <h2 class="benefits__title">Delivery</h2>
+
+             <ul class="benefits__list">
+
+               <li class="benefits__item">
+                 <button class="benefits__button benefits__button--active" type="button" name="button">Delivery</button>
+               </li>
+               <li class="benefits__item">
+                 <button class="benefits__button" type="button" name="button">Guarantee</button>
+                 </li>
+               <li class="benefits__item">
+                 <button class="benefits__button" type="button" name="button">Credit</button>
+                 </li>
+
+             </ul>
+
+             <p class="benefits__description">
+               Some days i feel like i've been working on dlk my entire life and there are other days that i am completely shocked that four years have flown by. It's simply magical.
+             </p>
+
+             <p class="benefits__description">
+               What started as an outlet to deal  with the traumatic loss of my husband, dlk has now become a truly happy place for me and i have you and all of the beautiful designers that we work with to thank!
+             </p>
+
+             @@include('buttons/index.html', {
+               "tag": "button",
+               "class": "benefits__link",
+               "type": "button",
+               "text": "Learn more",
+             })
+
+           </div>
+
+         </div>
+
+       </section>
+
+       <!-- Partners -->
+       <section class="partners">
+
+         <div class="partners__wrap container">
+
+           <h2 class="partners__title">Partners</h2>
+
+           <ul class="partners__list">
+
+             <li class="partners__item">
+               <img class="partners__image" src="static/images/img_partner_1.png" alt="Mail group logo" width="193" height="60">
+             </li>
+
+             <li class="partners__item">
+               <img class="partners__image" src="static/images/img_partner_2.png" alt="Apple logo" width="179" height="61">
+             </li>
+
+             <li class="partners__item">
+               <img class="partners__image" src="static/images/img_partner_3.png" alt="Eltex logo" width="216" height="46">
+             </li>
+
+             <li class="partners__item">
+               <img class="partners__image" src="static/images/img_partner_4.png" alt="Owox logo" width="211" height="40">
+             </li>
+
+           </ul>
+
+         </div>
+
+       </section>
+
+       <!-- About -->
+       <section class="about">
+
+         <div class="about__wrap container">
+
+           <h2 class="about__title">About</h2>
+           <!-- About -->
+           <article class="about__information">
+
+             <h2 class="about__information-title">
+               Design life kids
+             </h2>
+
+             <span class="about__information-subtitle">About us</span>
+
+             <p class="about__information-description">
+               Some days i feel like i've been working on dlk my entire life and there are other days that i am completely shocked that four years have flown by. It's simply magical.
+             </p>
+
+             @@include('buttons/index.html', {
+               "tag": "button",
+               "class": "about__information-link",
+               "type": "button",
+               "text": "Buy now",
+             })
+
+           </article>
+
+           <!-- Contacts -->
+           <article class="about__contacts">
+
+             <h2 class="about__contacts-title">
+               Contacts
+             </h2>
+
+             <p class="about__contacts-description">
+               Some days i feel like i've been working on dlk my entire life and there are other days that i am completely shocked that four years have flown by. It's simply magical.
+             </p>
+
+             <div class="about__contacts-map">
+
+                 @@include('map/index.html')
+
+             </div>
+
+           </article>
+
+         </div>
+
+       </section>
+
     </main>
+
     @@include('footer/index.html')
+
+    <!-- Popup feedback form -->
+     <section class="popup-feedback feedback feedback--hidden">
+
+       <div class="feedback__wrap container">
+
+         <h2 class="feedback__title">Feedback form</h2>
+
+         <!-- Form -->
+         <form class="feedback__form" method="post" action="index.html">
+
+           <button class="feedback__close" type="button">Close feedback form</button>
+
+           <fieldset class="feedback__field">
+
+             <div class="feedback__wrapper">
+
+               <label for="name" class="feedback__label">Name</label>
+               <input class="feedback__input" id="name" type="text" name="name" required>
+
+             </div>
+
+             <div class="feedback__wrapper--half">
+
+               <div class="feedback__wrapper feedback__wrapper--margined">
+
+                 <label for="phone" class="feedback__label">Phone</label>
+                 <input class="feedback__input" id="phone" type="tel" name="phone" required>
+
+               </div>
+
+               <div class="feedback__wrapper">
+
+                 <label for="mail" class="feedback__label">Email</label>
+                 <input  class="feedback__input" id="mail" type="email" name="mail" required>
+
+               </div>
+
+             </div>
+
+
+
+             <label for="message" class="feedback__label">Message</label>
+             <textarea class="feedback__message" id="message" name="message" rows="8" cols="80" required></textarea>
+
+             <div class="feedback__information">
+
+               <input class="feedback__input feedback__input--hidden" id="agreement" type="checkbox" name="agreement" required>
+               <label for="agreement" class="feedback__agreement">By clicking on the button, you consent to the processing of your personal data</label>
+
+             </div>
+
+             @@include('buttons/index.html', {
+               "tag": "button",
+               "class": "feedback__button",
+               "text": "Submit",
+               "href": "#"
+             })
+
+           </fieldset>
+
+         </form>
+
+       </div>
+
+     </section>
+
+
     <script src="scripts.js"></script>
+
   </body>
+
 </html>
