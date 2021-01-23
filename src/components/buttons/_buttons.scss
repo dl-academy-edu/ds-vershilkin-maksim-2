@@ -14,24 +14,27 @@
   background-color: $color_black;
   // Animation
   transition: background-color ease-in 0.3s, opacity ease-in 0.3s;
-}
 
-.button:hover {
-  // Stylization
-  cursor: pointer;
-  background-color: $color_brown;
-  // Animation
-  transition: background-color ease-in 0.3s, opacity ease-in 0.3s;
-}
+  &:hover {
+    // Stylization
+    cursor: pointer;
+    background-color: $color_brown;
+    // Animation
+    transition: background-color ease-in 0.3s, opacity ease-in 0.3s;
+  }
 
-.button:active {
-  // Stylization
-  opacity: 0.5;
-  // Animation
-  transition: background-color ease-in 0.3s, opacity ease-in 0.3s;
-}
+  &:active {
+    // Stylization
+    opacity: 0.5;
+    background-color: $color_brown-light;
+    // Animation
+    transition: background-color ease-in 0.3s, opacity ease-in 0.3s;
+  }
 
-.button:focus {
-  // Stylization
-  outline: solid 1px $color_brown;
+  &:focus {
+    // Stylization
+    outline: solid 1px $color_brown;
+    background-color: $color_brown;
+  }
+
 }

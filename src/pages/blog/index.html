@@ -2,16 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat:wght@300;700&family=Open+Sans&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
     <link href="/common.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/fonts/oswald.css" />
-    <link rel="shortcut icon" href="/static../../static.static/static/images/img_icon_favicon.svg">
-    <title>Каталог</title>
+    <link rel="shortcut icon" href="/static/images/img_icon_favicon.svg">
+    <title>Blog</title>
   </head>
   <body>
     @@include('header/index.html')
@@ -183,28 +183,9 @@
            </ul>
 
            <!-- Pagination -->
-           <div class="blog__pagination pagination">
-
-             <button class="pagination__button pagination__button--previous" type="button" name="previous">The previous page of articles</button>
-
-             <ul class="pagination__list">
-               <li class="pagination__item pagination__item--active">
-                 <a class="pagination__item-page pagination__item-page--active" href="#"><span class="pagination__item-span">Page</span> 1</a>
-               </li>
-               <li class="pagination__item">
-                 <a class="pagination__item-page" href="#"><span class="pagination__item-span">Page</span> 2</a>
-               </li>
-               <li class="pagination__item">
-                 <a class="pagination__item-page" href="#"><span class="pagination__item-span">Page</span> 3</a>
-               </li>
-               <li class="pagination__item">
-                 <a class="pagination__item-page" href="#"><span class="pagination__item-span">Page</span> 4</a>
-               </li>
-             </ul>
-
-             <button class="pagination__button pagination__button--next" type="button" name="next">The next page of articles</button>
-
-           </div>
+           @@include('pagination/index.html', {
+             "class": "blog__pagination"
+           })
 
          </div>
 

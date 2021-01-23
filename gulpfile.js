@@ -30,6 +30,7 @@ function html(src, dest) {
     .pipe(gulp.dest(dest))
     .pipe(browserSync.reload({ stream: true }));
 }
+
 // Функция обработки scss файлов
 function scss(src, dest) {
   return gulp
@@ -48,6 +49,7 @@ function scss(src, dest) {
     .pipe(gulp.dest(dest))
     .pipe(browserSync.reload({ stream: true }));
 }
+
 // Функция обработки js файлов
 function js(src, dest) {
   return gulp
@@ -65,12 +67,14 @@ function js(src, dest) {
     .pipe(gulp.dest(dest))
     .pipe(browserSync.reload({ stream: true }));
 }
+
 // Функция обработки шрифтов
 function fonts(src, dest) {
   fs.mkdirSync(dest, {recursive: true});
   fs.copy(src, dest);
   // TODO: нужно сделать оптимизацию шрифтов
 }
+
 // Функция обработки картинок
 function img(src, dest) {
   fs.mkdirSync(dest, {recursive: true});
