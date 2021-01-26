@@ -21,10 +21,13 @@ $color-meant: #DBE4DB;
 $color-wheat: #EADDD3;
 $color-orange: #F8F2DA;
 $color-purple: #D5D4E1;
+$color-purple-light: #E5EAF8;
+$color-purple-trns: rgba(125, 151, 218, 0.8);
 $color-blue: rgba(112, 187, 220, 0.2);
 $color-pink: #F3D0DB;
 $color-light-blue: #E5EAF8;
 $color_brown: #C29974;
+$color_brown-light: #CFAF91;
 
 :root {
   // Typography
@@ -100,6 +103,7 @@ ul, li {
 .social__link:hover {
   // Stylization
   opacity: 0.3;
+  background-color: $color_brown-light;
   // Animation
   transition: opacity ease-in 0.3s;
 }
