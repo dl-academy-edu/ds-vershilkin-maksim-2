@@ -26,21 +26,21 @@
     border-radius: 50%;
     background-color: $color_light-grey;
     // Animation
-    transition: opacity ease-in 0.3s;
+    transition: opacity ease-in .4s;
 
     &:hover {
       // Stylization
       opacity: 0.3;
       background-color: $color_light-grey;
       // Animation
-      transition: opacity ease-in 0.3s;
+      transition: opacity ease-in .4s;
     }
 
     &:active {
       // Stylization
       opacity: 0.7;
       // Animation
-      transition: opacity ease-in 0.3s;
+      transition: opacity ease-in .4s;
     }
 
     &:focus {

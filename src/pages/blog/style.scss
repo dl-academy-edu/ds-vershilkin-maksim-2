@@ -70,11 +70,6 @@
       color: $color_dark-grey-2;
     }
 
-    &__link-wrap {
-      // Block model
-      margin: 0 0 15px 0;
-    }
-
     &__link {
       // Typography
       color: $color_black;
@@ -85,6 +80,11 @@
       &:hover {
         // Typography
         text-decoration: underline;
+      }
+
+      &-wrap {
+        // Block model
+        margin: 0 0 15px 0;
       }
 
     }
