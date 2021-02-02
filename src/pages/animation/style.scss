@@ -1,0 +1,749 @@
+// Animation page
+@import "../../components/common.scss";
+
+$color_anim_purple: #f4ebff;
+
+$offset-cloud-1: 92px;
+$offset-cloud-2: 187px;
+$offset-cloud-3: 157px;
+$offset-cloud-4: 202px;
+$offset-cloud-5: 93px;
+$offset-cloud-6: 165px;
+
+$offset-car-0: 268;
+$offset-car-1: 250;
+$offset-car-2: 205px;
+$offset-car-3: 247px;
+
+@keyframes sun {
+
+  0% {
+    // Position
+    top: 40%;
+    // Stylization
+    fill: $color_pink;
+  } 100% {
+    // Position
+    top: 0;
+    // Stylization
+    fill: $color_anim_purple;
+  }
+
+}
+
+@keyframes cloud-1 {
+
+  from {
+    // Position
+    left: -$offset-cloud-1;
+  } 100% {
+    // Position
+    left: 100%;
+  }
+
+}
+@keyframes cloud-2 {
+
+  from {
+    // Position
+    left: -$offset-cloud-2;
+  } 100% {
+    // Position
+    left: 100%;
+  }
+
+}
+@keyframes cloud-3 {
+
+  from {
+    // Position
+    left: -$offset-cloud-3;
+  } 100% {
+    // Position
+    left: 100%;
+  }
+
+}
+@keyframes cloud-4 {
+
+  from {
+    // Position
+    left: -$offset-cloud-4;
+  } 100% {
+    // Position
+    left: 100%;
+  }
+
+}
+@keyframes cloud-5 {
+
+  from {
+    // Position
+    left: -$offset-cloud-5;
+  } 100% {
+    // Position
+    left: 100%;
+  }
+
+}
+@keyframes cloud-6 {
+
+  from {
+    // Position
+    left: -$offset-cloud-6;
+  } 100% {
+    // Position
+    left: 100%;
+  }
+
+}
+
+@keyframes car-1 {
+  from {
+    left: -$offset-car-1;
+  } to {
+    left: 100%;
+  }
+}
+
+@keyframes car-wheel {
+  from {
+    transform: rotate(0);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes taxi {
+  0% {
+    right: -150%;
+  } 20%,40% {
+    right: 5%;
+  } 60%,100% {
+    right: 150%;
+  }
+}
+
+@keyframes taxi-wheel {
+  0% {
+    transform: rotate(0deg);
+  } 20%,40% {
+    transform: rotate(#{-360*4}deg);
+  } 60%,100% {
+    transform: rotate(#{-360*8}deg);
+  }
+}
+
+@keyframes taxi-message {
+  0% {
+    transform: translateY(50%);
+  } 20%, 80% {
+    opacity: 1;
+    transform: translateY(0%);
+  } 100% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
+
+@keyframes hand {
+  0% {
+    transform: rotate(156deg);
+  } 20%,80% {
+    transform: rotate(10deg);
+  } 100% {
+    transform: rotate(156deg);
+  }
+}
+
+@keyframes woman-message {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  } 20%,80% {
+    opacity: 1;
+    transform: translateY(0%);
+  } 100% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
+
+@keyframes man-message {
+  0% {
+    opacity: 0;
+    transform: translateY(55%);
+  } 20%,80% {
+    opacity: 1;
+    transform: translateY(0%);
+  } 100% {
+    opacity: 0;
+    transform: translateY(55%);
+  }
+}
+
+.scene {
+
+  &__title {
+    // Block model
+    margin: 0 0 15px 0;
+    // Typography
+    font-family: $font-optional-1;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__nav {
+    // Block model
+    margin: 0 0 50px 0;
+  }
+
+  &__anim {
+    // Position
+    position: relative;
+    // Block model
+    height: 900px;
+    width: 100%;
+
+    &-sun {
+      // Position
+      position: absolute;
+      left: 75%;
+      top: 40%;
+      // Block model
+      width: 60px;
+      height: 60px;
+      z-index: -1;
+      // Stylization
+      fill: $color_orange;
+      border-radius: 50%;
+      // Animation
+      animation: sun ease-out 10s forwards;
+
+      &-path {
+        // Stylization
+        fill: inherit;
+        stroke: none;
+      }
+
+    }
+
+    &-sky {
+      // Position
+      position: relative;
+      // Block model
+      width: 100%;
+      height: 135px;
+      // Stylization
+      overflow: hidden;
+
+      &-1 {
+        // Position
+        position: absolute;
+        top: 2px;
+        left: -#{$offset-cloud-1};
+        // Block model
+        width: 92px;
+        height: 27px;
+        // Stylization
+        fill: $color_anim_purple;
+        // Animation
+        animation: cloud-1 30s linear 40s infinite forwards;
+      }
+
+      &-2 {
+        // Position
+        position: absolute;
+        bottom: 52px;
+        left: -#{$offset-cloud-2};
+        // Block model
+        width: 187px;
+        height: 40px;
+        // Stylization
+        fill: $color_anim_purple;
+        // Animation
+        animation: cloud-2 45s linear 35s infinite forwards;
+      }
+
+      &-3 {
+        // Position
+        position: absolute;
+        top: 0;
+        left: -#{$offset-cloud-3};
+        // Block model
+        width: 157px;
+        height: 33px;
+        // Stylization
+        fill: $color_anim_purple;
+        // Animation
+        animation: cloud-3 40s linear 27s infinite forwards;
+      }
+
+      &-4 {
+        // Position
+        position: absolute;
+        bottom: 1%;
+        left: -#{$offset-cloud-4};
+        // Block model
+        width: 202px;
+        height: 42px;
+        // Stylization
+        fill: $color_anim_purple;
+        // Animation
+        animation: cloud-4 47s linear 20s infinite forwards;
+      }
+
+      &-5 {
+        // Position
+        position: absolute;
+        bottom: 65px;
+        left: -#{$offset-cloud-5};
+        // Block model
+        width: 93px;
+        height: 27px;
+        // Stylization
+        fill: $color_anim_purple;
+        // Animation
+        animation: cloud-5 37s linear 16s infinite forwards;
+      }
+
+      &-6 {
+        // Position
+        position: absolute;
+        bottom: 60px;
+        left: -#{$offset-cloud-6};
+        // Block model
+        width: 165px;
+        height: 35px;
+        // Stylization
+        fill: $color_anim_purple;
+        // Animation
+        animation: cloud-6 40s linear 6s infinite forwards;
+      }
+
+    }
+
+    &-city {
+      // Position
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      // Block model
+      padding: 0 0 1% 0;
+      // Stylization
+      overflow: hidden;
+
+      &-img {
+        // Block model
+        margin: 0 0 10px 0;
+      }
+
+      &-road {
+        // Position
+        position: relative;
+        // Block model
+        width: 100%;
+        height: 40px;
+        margin: 0 0 40px 0;
+        // Stylization
+        background-color: $color_anim_purple;
+      }
+
+      &-car-0 {
+        // Position
+        position: absolute;
+        bottom: 10%;
+        left: -#{$offset-car-0}px;
+        // Block model
+        width: #{$offset-car-0}px;
+        height: #{($offset-car-0*0.48)}px;
+        // Animation
+        animation: car-1 15s linear 5s infinite;
+
+        &-body {
+          // Position
+          position: absolute;
+          top: 0;
+          // Block model
+          width: 100%;
+          height: auto;
+        }
+
+        &-wheel-b {
+          // Position
+          position: absolute;
+          bottom: 0;
+          left: 13.45%;
+          // Block model
+          width: 18.7%;
+          height: auto;
+          // Animation
+          animation: car-wheel 1s linear 1s infinite;
+        }
+
+        &-wheel-f {
+          // Position
+          position: absolute;
+          bottom: 0;
+          right: 9%;
+          // Block model
+          width: 18.7%;
+          height: auto;
+          // Animation
+          animation: car-wheel 1s linear 1s infinite;
+        }
+
+      }
+
+      &-car-1 {
+        // Position
+        position: absolute;
+        bottom: 20%;
+        left: -#{$offset-car-1}px;
+        // Block model
+        width: #{$offset-car-1}px;
+        height: #{($offset-car-1*0.43)}px;
+        // Animation
+        animation: car-1 10s linear 1s infinite;
+
+        &-body {
+          // Position
+          position: absolute;
+          top: 0;
+          // Block model
+          width: 100%;
+          height: auto;
+        }
+
+        &-wheel-b {
+          // Position
+          position: absolute;
+          bottom: 0;
+          left: 14%;
+          // Block model
+          width: 17.9%;
+          height: auto;
+          // Animation
+          animation: car-wheel 1s linear 1s infinite;
+        }
+
+        &-wheel-f {
+          // Position
+          position: absolute;
+          bottom: 0;
+          right: 9%;
+          // Block model
+          width: 17.9%;
+          height: auto;
+          // Animation
+          animation: car-wheel 1s linear 1s infinite;
+        }
+
+      }
+
+      &-car-2 {
+        // Position
+        position: absolute;
+        bottom: 50%;
+        left: -$offset-car-2;
+        // Block model
+        width: 205px;
+        height: 100px;
+        // Animation
+        animation: car-1 20s linear 7s infinite;
+
+        &-wheel-b {
+          // Position
+          position: absolute;
+          bottom: 0;
+          left: 17px;
+          // Animation
+          animation: car-wheel .7s linear 1s infinite;
+        }
+
+        &-wheel-f {
+          // Position
+          position: absolute;
+          bottom: 0;
+          right: 17px;
+          // Animation
+          animation: car-wheel .7s linear 1s infinite;
+        }
+
+      }
+
+      &-car-3 {
+        // Position
+        position: absolute;
+        bottom: 70%;
+        left: -$offset-car-3;
+        // Block model
+        width: 247px;
+        height: auto;
+        // Animation
+        animation: car-1 5s linear 10s normal infinite running;
+
+        &-wheel-b {
+          // Position
+          position: absolute;
+          bottom: 7px;
+          left: 45px;
+          // Animation
+          animation: car-wheel 1s linear 1s infinite;
+        }
+
+        &-wheel-f {
+          // Position
+          position: absolute;
+          bottom: 7px;
+          right: 38px;
+          // Animation
+          animation: car-wheel 1s linear 1s infinite;
+        }
+
+      }
+
+      &-lantern-1 {
+        // Position
+        position: absolute;
+        bottom: 115%;
+        left: 35%;
+
+      }
+
+      &-lantern-2 {
+        // Position
+        position: absolute;
+        bottom: 115%;
+        right: -2%;
+
+      }
+
+      &-lantern-3 {
+        // Position
+        position: absolute;
+        bottom: 12%;
+        right: 17%;
+        // Block model
+         width: 215px;
+         height: auto;
+
+      }
+
+      &-road-2 {
+        // Position
+        position: relative;
+        // Block model
+        width: 100%;
+        height: 100px;
+        // Stylization
+        background-color: $color_anim_purple;
+
+      }
+
+      &-taxi {
+        // Position
+        position: absolute;
+        bottom: 20%;
+        right: 0%;
+        // Animation
+        animation: taxi 20s ease 10s 1 both running;
+
+        &-body {
+          // Block model
+          width: 888px;
+        }
+
+        &-wheel-f {
+          // Position
+          position: absolute;
+          bottom: 8%;
+          left: 15.3%;
+          // Block model
+          width: 8%;
+          height: auto;
+          // Animation
+          animation: taxi-wheel 20s ease 10s both running;
+        }
+
+        &-wheel-b {
+          // Position
+          position: absolute;
+          bottom: 8%;
+          right: 18.7%;
+          // Block model
+          width: 8%;
+          height: auto;
+          // Animation
+          animation: taxi-wheel 20s ease 10s both running;
+        }
+
+        &-message {
+          // Position
+          position: absolute;
+          top: -20%;
+          left: 29%;
+          // Block model
+          width: auto;
+          padding: 1% 1% 5% 1%;
+          box-sizing: border-box;
+          // Stylization
+          border-radius: 10px;
+          background-color: $color_white;
+          opacity: 0;
+          // Animation
+          transform: translateY(50%);
+          animation: taxi-message 4s ease-in 14s both running;
+        }
+
+        &-arrow {
+          // Position
+          position: absolute;
+          bottom: -28%;
+          right: 5%;
+          z-index: 0;
+        }
+
+      }
+
+      &-pedestrian-area {
+        // Position
+        position: relative;
+        // Block model
+        height: 100px;
+      }
+
+      &-asphalt {
+        // Position
+        position: absolute;
+        top: 15%;
+        left: 1%;
+        right: 1%;
+      }
+
+      &-man {
+        // Position
+        position: absolute;
+        bottom: 25%;
+        left: 24%;
+        // Block model
+        width: 210px;
+        height: 362px;
+
+        &-hand {
+          // Position
+          position: absolute;
+          top: -10%;
+          left: 0;
+          // Block model
+          width: 43%;
+          height: auto;
+          // Animation
+          transform: rotate(156deg);
+          transform-origin: 15% 88%;
+          animation: hand 6s ease-in 5s 1 both running;
+
+        }
+
+        &-body {
+          // Position
+          position: absolute;
+          top: 0;
+          left: 0;
+          // Block model
+          width: 100%;
+          height: auto;
+        }
+
+        &-message {
+          // Position
+          position: absolute;
+          top: -30%;
+          left: -5%;
+          // Block model
+          width: 160px;
+          height: 70px;
+          padding: 7%;
+          box-sizing: border-box;
+          // Stylization
+          border-radius: 10px;
+          background-color: $color_white;
+          // Animation
+          animation: man-message 4s ease-in 6s both running;
+        }
+
+        &-message-2 {
+          // Position
+          position: absolute;
+          top: -30%;
+          left: -5%;
+          // Block model
+          width: 210px;
+          height: 50px;
+          padding: 7%;
+          box-sizing: border-box;
+          // Stylization
+          border-radius: 10px;
+          background-color: $color_white;
+          // Animation
+          animation: man-message 4s ease-in 20s both running;
+        }
+
+        &-arrow {
+          // Position
+          position: absolute;
+          bottom: -28%;
+          left: 15%;
+          z-index: 0;
+        }
+
+      }
+
+      &-girl {
+        // Position
+        position: absolute;
+        bottom: 5%;
+        left: 18%;
+
+        &-body {
+          // Block model
+          width: 192px;
+          height: auto;
+        }
+
+        &-message {
+          // Position
+          position: absolute;
+          top: -35%;
+          left: -50%;
+          // Block model
+          width: 169px;
+          height: auto;
+          padding: 7%;
+          box-sizing: border-box;
+          // Stylization
+          border-radius: 10px;
+          background-color: $color_white;
+          // Animation
+          transform: translateY(50%);
+          animation: woman-message 4s ease-in 2s both running;
+        }
+
+        &-arrow {
+          // Position
+          position: absolute;
+          bottom: -28%;
+          right: 10%;
+          z-index: 0;
+        }
+
+      }
+
+
+
+    }
+
+  }
+
+}

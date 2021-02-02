@@ -18,13 +18,13 @@
     // Block model
     margin: 0 60px 0 0;
     //Animation
-    transition: opacity ease-in 0.3s;\
+    transition: opacity ease-in 0.4s;
 
     &:hover {
       // Stylization
       opacity: 0.5;
       //Animation
-      transition: opacity ease-in 0.3s;
+      transition: opacity ease-in 0.4s;
     }
 
     &:active {
@@ -39,41 +39,42 @@
     display:flex;
     flex: 1;
     align-items: center;
-  }
 
-  &__nav-list {
-    // Position
-    display: flex;
-    // Block model
-    margin:0;
-    padding:0;
-    // Stylization
-    list-style-type: none;
-  }
-
-  &__nav-item {
-    // Block model
-    margin: -7px 20px 0 0;
-  }
-
-  &__nav-link {
-    // Typography
-    color: $color_black;
-    font-size: 14px;
-    text-transform: uppercase;
-    //Animation
-    transition: opacity ease-in 0.3s;
-
-    &:hover {
+    &-list {
+      // Position
+      display: flex;
+      // Block model
+      margin:0;
+      padding:0;
       // Stylization
-      opacity: 0.5;
-      //Animation
-      transition: opacity ease-in 0.3s;
+      list-style-type: none;
     }
 
-    &:active {
-      // Stylization
-      opacity: 0.2;
+    &-item {
+      // Block model
+      margin: -7px 20px 0 0;
+    }
+
+    &-link {
+      // Typography
+      color: $color_black;
+      font-size: 14px;
+      text-transform: uppercase;
+      //Animation
+      transition: opacity ease-in 0.4s;
+
+      &:hover {
+        // Stylization
+        opacity: 0.5;
+        //Animation
+        transition: opacity ease-in 0.4s;
+      }
+
+      &:active {
+        // Stylization
+        opacity: 0.2;
+      }
+
     }
 
   }
@@ -87,14 +88,14 @@
     // Typography
     font-size: 0;
     //Animation
-    transition: opacity ease-in 0.3s;
+    transition: opacity ease-in 0.4s;
 
     &:hover {
       // Stylization
       cursor: pointer;
       opacity: 0.5;
       //Animation
-      transition: opacity ease-in 0.3s;
+      transition: opacity ease-in 0.4s;
     }
 
     &:active {
@@ -117,13 +118,13 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     //Animation
-    transition: opacity ease-in 0.3s;
+    transition: opacity ease-in 0.4s;
 
     &:hover {
       // Stylization
       opacity: 0.5;
       //Animation
-      transition: opacity ease-in 0.3s;
+      transition: opacity ease-in 0.4s;
     }
 
     &:active {
