@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat:wght@300;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link href="/common.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/fonts/oswald.css" />
+    <link rel="shortcut icon" href="/static/images/img_icon_favicon.svg">
+    <title>Main page</title>
+  </head>
+  <body>
+
+    @@include('header/index.html')
+
+    <!-- Main -->
+    <main class="main">
+
+      <div class="svg__wrap container">
+
+        <h1 class="svg__title">SVG</h1>
+
+        <!-- Section navigation -->
+        <nav class="svg__nav section-navigation">
+
+          @@include('navigation/index.html', {
+            "tag": "a",
+            "class": "section-navigation__link",
+            "href": "/",
+            "text": "Home"
+          })
+
+          @@include('navigation/index.html', {
+            "tag": "a",
+            "class": "section-navigation__link",
+            "class2": "section-navigation__link--active",
+            "href": "/pages/svg",
+            "text": "SVG"
+          })
+
+        </nav>
+
+        <div class="svg__wrapper">
+
+          <div class="svg__web">
+
+            <div class="svg__web-wrap">
+
+              <svg class="svg__web-header" viewbox="0 0 418 27">
+                <path d="M0 10C0 5 5 0 10 0H408C413 0 418 5 418 10V27H0z" stroke="none" stroke-width="1px"/>
+              </svg>
+
+              <div class="svg__web-body">
+
+                <svg class="svg__web-aside" viewbox="0 0 21 324">
+                  <path class="svg__web-aside-bg" d="M0 0H21 V324 H0 V0z" />
+                </svg><svg class="svg__web-code" viewbox="0 0 187 324" >
+                  <rect class="svg__web-code-bg" width="100%" height="100%" x="0" y="0" width="100%" height="100%" />
+                  <path class="svg__web-code-line-1" d="M25 27H154z" />
+                  <path class="svg__web-code-line-2" d="M38 54H169z" />
+                  <path class="svg__web-code-line-3" d="M52 81H80z" />
+                  <path class="svg__web-code-line-4" d="M106 81H187z" />
+                  <path class="svg__web-code-line-5" d="M65 108H187z" />
+                  <path class="svg__web-code-line-6" d="M65 134H141z" />
+                  <path class="svg__web-code-line-7" d="M65 161H87z" />
+                  <path class="svg__web-code-line-8" d="M112 161H187z" />
+                  <path class="svg__web-code-line-9" d="M65 188H187z" />
+                  <path class="svg__web-code-line-10" d="M65 215H164z" />
+                  <path class="svg__web-code-line-11" d="M52 242H114z" />
+                  <path class="svg__web-code-line-12" d="M38 269H144z" />
+                  <path class="svg__web-code-line-13" d="M25 296H67z" />
+                </svg><svg class="svg__web-image" viewbox="0 0 209 324" fill="#E6E9ED" >
+                  <rect width="100%" height="100%" x="0" y="0" width="100%" height="100%" />
+                  <path class="svg__web-image-sky-1" d="M0 20H182C185.5 20 189 20 189 27V135C189 138.5 185.5 142 182 142H0z"/>
+                  <path class="svg__web-image-mountain-1" d="M17 142L62.25 86C64.25 84 66.25 84 68.25 86L119.5 142z"/>
+                  <path class="svg__web-image-mountain-2" d="M53.6 142L112 66C115 62 119 62 122 66L176.6 142z"/>
+                  <rect class="svg__web-image-sky-2" x="20" y="161" rx="5" ry="5" width="169" height="88"/>
+                  <circle class="svg__web-image-sun" cx="54" cy="188.5" r="11"/>
+
+                  <path class="svg__web-image-mountain-3" d="M64.5 249L99 208C101 206 103 206 105 208L139.5 249z"/>
+                    <path class="svg__web-image-mountain-4" d="M91 249L130 196C132 193 136 193 138 196L177 249z"/>
+
+                  <path class="svg__web-image-line-1" d="M26 269L182 269z" stroke="black" />
+                  <path class="svg__web-image-line-2" d="M26 296L108 296z" stroke="black" />
+                </svg>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        </div>
+
+      </div>
+
+    </main>
+
+    @@include('footer/index.html')
+
+    <script src="scripts.js"></script>
+
+  </body>
+
+</html>
