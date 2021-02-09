@@ -1,0 +1,350 @@
+// Main page
+@import "../../components/common.scss";
+
+// Frames
+@keyframes page {
+  from {
+    transform: translateY(100%);
+  } to {
+    transform: translateY(1%);
+  }
+}
+
+@keyframes line {
+  from {
+    // Anitation
+    transform: translateX(100%);
+  } to {
+    // Anitation
+    transform: translateX(0%);
+  }
+}
+
+// Mixins
+@mixin line($time,$delay) {
+  // Animation
+  transform: translateX(100%);
+  animation: line-1 $time ease-in $delay forwards;
+}
+
+@mixin lines($name,$duration,$delay) {
+
+  // Animation
+  transform: translateX(100%);
+  animation: $name $duration ease-in $delay forwards running;
+
+}
+
+@keyframes image {
+  from {
+    // Animation
+    transform: translateX(-100%);
+  } to {
+    // Animation
+    transform: translateX(0%);
+  }
+}
+
+@keyframes mountain {
+  from {
+    // Stylization
+    opacity: 0;
+    // Animation
+    transform: translateY(10%)
+  } to {
+    // Stylization
+    opacity: 1;
+    // Animation
+    transform: translateY(0%)
+  }
+}
+
+@keyframes sun {
+  from {
+    // Stylization
+    opacity: 0;
+    // Animation
+    transform: translateY(10%)
+  } to {
+    // Stylization
+    opacity: 1;
+    // Animation
+    transform: translateY(0%)
+  }
+}
+
+@mixin color($color,$size,$join) {
+  // Stylization
+  stroke: $color;
+  stroke-width: $size;
+  stroke-linejoin: $join;
+}
+
+// Colors pallete
+$color_dark: #545C66;
+$color_light-dark: #656D78;
+$color_light: #CCD1D9;
+$color_grey: #E6E9ED;
+$color_blue: #5D9CEC;
+$color_green: #A0D468;
+$color_red: #ED5565;
+$color_yellow: #FFCE54;
+
+.svg {
+
+  &-wrapper {
+
+  }
+
+  &__title {
+    // Block model
+    margin: -10px 0 21px 0;
+    // Typography
+    font-family: $font-optional-1;
+    font-size: 40px;
+    line-height: 44px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__nav {
+    // Block model
+    margin: 0 0 50px 0;
+  }
+
+  &__wrapper {
+    // Position
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    // Block model
+    height: auto;
+    // margin: 0 0 50px 0;
+    // Stylization
+    overflow: hidden;
+    // background-color: $color_orange;
+  }
+
+  &__web {
+    // Position
+    position: relative;
+    // Block model
+    width: 50%;
+    margin: 0 0 -5px 0px;
+    // Animation
+    transform: translateY(100%);
+    animation: page 1s ease-out 1s forwards running;
+
+    &-wrap {
+      // Stylization
+      width: 100%;
+      height: 100%;
+    }
+
+    &-header {
+      // Stylization
+      fill: $color_light;
+    }
+
+    &-aside {
+      // Block model
+      width: 5%;
+      height: 100%;
+      box-sizing: border-box;
+
+      &-bg {
+        // Block model
+        width: 100%;
+        height: 100%;
+        // Stylization
+        fill: $color_dark;
+      }
+
+    }
+
+    &-code {
+      // Block model
+      width: 45%;
+      height: 100%;
+      box-sizing: border-box;
+      // Stylization
+      fill: $color_light-dark;
+
+      &-body {
+        // Position
+        display: flex;
+        flex-flow: row nowrap;
+      }
+
+      @for $i from 1 through 13 {
+        .svg__web-code-line-#{$i} {
+          @include lines(line,1s,#{2+($i*0.1)}s);
+        }
+      }
+
+      &-line-1 {
+        // Stylization
+        @include color($color_blue, 14px, round);
+      }
+
+      &-line-2 {
+        // Stylization
+        @include color($color_green, 14px, round);
+      }
+
+      &-line-3 {
+        // Stylization
+        @include color($color_red, 14px, round);
+      }
+
+      &-line-4 {
+        // Stylization
+        @include color($color_red, 14px, round);
+      }
+
+      &-line-5 {
+        // Stylization
+        @include color($color_yellow, 14px, round);
+      }
+
+      &-line-6 {
+        // Stylization
+        @include color($color_light, 14px, round);
+      }
+
+      &-line-7 {
+        // Stylization
+        @include color($color_light, 14px, round);
+      }
+
+      &-line-8 {
+        // Stylization
+        @include color($color_light, 14px, round);
+      }
+
+      &-line-9 {
+        // Stylization
+        @include color($color_light, 14px, round);
+      }
+
+      &-line-10 {
+        // Stylization
+        @include color($color_yellow, 14px, round);
+      }
+
+      &-line-11 {
+        // Stylization
+        @include color($color_red, 14px, round);
+      }
+
+      &-line-12 {
+        // Stylization
+        @include color($color_green, 14px, round);
+      }
+
+      &-line-13 {
+        // Stylization
+        @include color($color_blue, 14px, round);
+      }
+
+    }
+
+    &-body {
+      // Position
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: stretch;
+      // Block model
+      margin: -4px 0 0 0;
+    }
+
+    &-image {
+      // Block model
+      width: 50%;
+      height: 100%;
+      box-sizing: border-box;
+      // Stylization
+      fill: $color_grey;
+
+      &-sky-1 {
+        // Stylization
+        fill: $color_blue;
+        // Animation
+        transform: translateX(-100%);
+        animation: image 1s ease-in #{(13*0.1+2.5)}s forwards running;
+      }
+
+      &-mountain-1 {
+        // Stylization
+        opacity: 0;
+        fill: $color_dark;
+        // Animation
+        transform: translateY(10%);
+        animation: mountain 1s ease-in #{13*0.1+2.5}s forwards running;
+      }
+
+      &-mountain-2 {
+        // Stylization
+        opacity: 0;
+        fill: $color_light-dark;
+        // Animation
+        transform: translateY(10%);
+        animation: mountain 1s ease-in #{(13*0.1+3)}s forwards running;
+      }
+
+      &-sky-2 {
+        // Stylization
+        fill: $color_blue;
+        // Animation
+        transform: translateX(-100%);
+        animation: image 1s ease-in #{(13*0.1+4)}s forwards running;
+      }
+
+      &-sun {
+        // Stylization
+        opacity: 0;
+        fill: $color_yellow;
+        // Animation
+        transform: translateY(20%);
+        animation: mountain 1s ease-in #{(13*0.1+5.5)}s forwards running;
+      }
+
+      &-mountain-3 {
+        // Stylization
+        opacity: 0;
+        fill: $color_dark;
+        // Animation
+        transform: translateY(10%);
+        animation: mountain 1s ease-in #{(13*0.1+4)}s forwards running;
+      }
+
+      &-mountain-4 {
+        // Stylization
+        opacity: 0;
+        fill: $color_light-dark;
+        // Animation
+        transform: translateY(10%);
+        animation: mountain 1s ease-in #{(13*0.1+4.3)}s forwards running;
+      }
+
+      &-line-1 {
+        // Stylization
+        @include color ($color_light, 14px, round);
+        // Animation
+        transform: translateX(-100%);
+        animation: image 1s ease-in #{(13*0.1+5)}s forwards running;
+      }
+
+      &-line-2 {
+        // Stylization
+        @include color ($color_light, 14px, round);
+        // Animation
+        transform: translateX(-100%);
+        animation: image 1s ease-in #{(13*0.1+5.5)}s forwards running;
+      }
+
+    }
+
+  }
+
+}

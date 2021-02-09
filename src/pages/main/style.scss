@@ -275,20 +275,26 @@
       box-shadow: none;
     }
 
-    &--left {
+    &-svg {
       // Block model
-      margin: 0 2px 0 0;
-      // Stylization
-      background: $color-blue url("./static/images/img_icon_arrow_left.svg") center no-repeat;
-      background-size: 18px;
-    }
+      width: 100%;
 
-    &--right {
-      // Block model
-      margin: 0 16px 0 0;
-      // Stylization
-      background: $color-blue url("./static/images/img_icon_arrow_right.svg") center no-repeat;
-      background-size: 18px;
+      &:hover > &-path {
+        // Stylization
+        stroke: $color_brown;
+        // Animtation
+        transition: stroke ease-in .4s;
+      }
+
+      &-path {
+        // Stylization
+        fill: none;
+        stroke: $color_4;
+        stroke-width: 4px;
+        // Animtation
+        transition: stroke ease-in .4s;
+      }
+
     }
 
   }

@@ -13,15 +13,16 @@
     // Animation
     transition: opacity ease-in .4s;
 
-    &--previous {
+    &-svg {
       // Stylization
-      background: url("/static/images/img_icon_pagination_arrow_left.svg") center no-repeat;
-      background-size: 13px 19px;
+      fill: none;
     }
 
-    &--next {
-      background: url("/static/images/img_icon_pagination_arrow_right.svg") center no-repeat;
-      background-size: 13px 19px;
+    &-path {
+      // Stylization
+      stroke: #C29974;
+      stroke-width: 4px;
+
     }
 
     &:hover {
