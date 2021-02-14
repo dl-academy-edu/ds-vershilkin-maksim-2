@@ -39,6 +39,22 @@ $color_brown-light: #CFAF91;
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 32px;
+
+  @media (max-width: 1140px) {
+    // Block model
+    padding: 0 60px;
+  }
+
+  @media (max-width: 768px) {
+    // Block model
+    padding: 0 60px;
+  }
+
+  @media (max-width: 375px) {
+    // Block model
+    padding: 0 20px;
+  }
+
 }
 
 body {

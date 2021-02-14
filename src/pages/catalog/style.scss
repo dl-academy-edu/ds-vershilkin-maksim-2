@@ -1,13 +1,15 @@
 // Catalog page styles
 @import "../../components/common.scss";
 
+@mixin title($size,$height) {
+  // Typography
+  font-size: $size;
+  line-height: $height;
+}
+
 .catalog {
   // Block model
-  margin: 0 0 55px 0;
-
-  &__wrap {
-
-  }
+  padding: 0 0 55px 0;
 
   &__title {
     // Block model
@@ -128,6 +130,164 @@
     margin: 0 0 15px 0;
     // Typography
     line-height: 26px;
+  }
+
+}
+
+@media (max-width:1170px) {
+
+  .catalog {
+
+    &__item {
+      // Position
+      flex: 1 auto;
+      // Block model
+      width: 25%;
+      padding: 0 20px;
+      // Stylization
+      background-size: 75%;
+
+      &:nth-child(3n) {
+        // Block model
+        margin-right: 0;
+      }
+
+      &--fourth {
+        margin-left: 0;
+      }
+
+    }
+
+  }
+
+  .description {
+
+    &__wrap {
+      // Block model
+      padding: 0 60px;
+    }
+
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .catalog {
+    // Block model
+    padding: 0 0 40px 0;
+
+    &__title {
+      @include title(36px,44px);
+      // Block model
+      margin: 0 0 10px 0;
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 30px 0;
+    }
+
+    &__item {
+      // Position
+      flex: 1 auto;
+      // Block model
+      width: 25%;
+      height: 200px;
+      padding: 0 20px;
+      // Stylization
+      background-size: 75%;
+
+      &:nth-child(3n) {
+        // Block model
+        margin-right: 0;
+      }
+
+      &--fourth {
+        margin-left: 0;
+      }
+
+    }
+
+    &__link {
+      // Typography
+      font-size: 18px;
+    }
+
+  }
+
+  .description {
+
+    &__title {
+      @include title(36px,44px);
+      // Block model
+      margin: 0 0 20px 0;
+    }
+
+  }
+
+}
+
+@media (max-width:580px) {
+
+  .catalog {
+    // Block model
+    padding: 0 0 30px 0;
+
+    &__wrap {
+      // Block model
+      padding: 0 20px;
+    }
+
+    &__title {
+      @include title(24px,29px);
+      // Block model
+      margin: 0 0 10px 0;
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 20px 0;
+    }
+
+    &__item {
+      // Block model
+      width: 44%;
+
+      &:nth-child(2n) {
+        margin: 0 0 20px 0;
+      }
+
+      &:nth-child(3n) {
+        margin-right: 20px;
+      }
+
+      &:nth-child(6) {
+        // Block model
+        margin-right: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+
+  .description {
+
+    &__wrap {
+      // Block model
+      padding: 0 20px;
+    }
+
+    &__title {
+      @include title(24px,29px);
+      // Block model
+      margin: 0 0 15px 0;
+    }
+
   }
 
 }

@@ -32,6 +32,17 @@
       opacity: 0.2;
     }
 
+    &-link {
+      // Block model
+      width: 100px;
+    }
+
+    &-image {
+      // Block model
+      width: 100%;
+      height: auto;
+    }
+
   }
 
   &__nav {
@@ -79,12 +90,30 @@
 
   }
 
+  &__menu {
+    // Position
+    display: none;
+    flex: 1;
+    justify-content: center;
+
+    &-button {
+      // Typography
+      color: $color_black;
+      font-size: 14px;
+      text-transform: uppercase;
+      //Animation
+      transition: opacity ease-in 0.4s;
+
+    }
+
+  }
+
   &__searching {
     // Position
     display: flex;
     align-self: center;
     // Block model
-    margin: -4px 22px 0 0;
+    margin: -4px 0 0 0;
     // Typography
     font-size: 0;
     //Animation
@@ -110,7 +139,7 @@
     display: flex;
     align-self: center;
     // Block model
-    margin: -5px 0 0 0;
+    margin: -5px 0 0 22px;
     //Typography
     color: $color_black;
     font-size: 14px;
@@ -130,6 +159,94 @@
     &:active {
       // Stylization
       opacity: 0.2;
+    }
+
+  }
+
+  &__mobile {
+    // Position
+    display: none;
+    // Block model
+    padding: 25px 0;
+
+    &-list {
+      // Position
+      display: flex;
+      flex-flow: column;
+
+    }
+
+    &-item {
+      // Position
+      display: flex;
+      justify-content: center;
+      // Block model
+      margin: 0 0 20px 0;
+    }
+
+    &-link {
+      // Typography
+      color: $color_black;
+      font-size: 16px;
+      text-transform: uppercase;
+
+      &--highlighted {
+        // Block model
+        margin-top: 15px;
+        // Typography
+        font-weight: 600;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width:768px) {
+
+
+  .header {
+    // Block model
+    padding: 35px 0;
+
+    &__logo {
+      // Block model
+      margin: 0;
+
+      &-link {
+          // Block model
+          width: 62px;
+      }
+
+    }
+
+    &__nav {
+      // Position
+      display: none;
+    }
+
+    &__menu {
+      // Position
+      display: flex;
+    }
+
+    &__link {
+      // Block model
+      display: none;
+    }
+
+  }
+
+}
+
+@media (max-width:580px) {
+
+  .header {
+
+    &__wrap {
+      // // Block model
+      padding: 0 20px;
     }
 
   }

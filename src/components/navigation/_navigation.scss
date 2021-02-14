@@ -46,3 +46,19 @@
   }
 
 }
+
+@media (max-width:375px) {
+
+
+  .section-navigation {
+
+    &__link {
+      // Typography
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+  }
+
+
+}

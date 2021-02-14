@@ -1,6 +1,12 @@
 // Animation page
 @import "../../components/common.scss";
 
+@mixin text($size,$height) {
+  // Typography
+  font-size: $size;
+  line-height: $height;
+}
+
 $color_anim_purple: #f4ebff;
 
 $offset-cloud-1: 92px;
@@ -9,11 +15,6 @@ $offset-cloud-3: 157px;
 $offset-cloud-4: 202px;
 $offset-cloud-5: 93px;
 $offset-cloud-6: 165px;
-
-$offset-car-0: 268;
-$offset-car-1: 250;
-$offset-car-2: 205px;
-$offset-car-3: 247px;
 
 @keyframes sun {
 
@@ -98,22 +99,6 @@ $offset-car-3: 247px;
 
 }
 
-@keyframes car-1 {
-  from {
-    left: -$offset-car-1;
-  } to {
-    left: 100%;
-  }
-}
-
-@keyframes car-wheel {
-  from {
-    transform: rotate(0);
-  } to {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes taxi {
   0% {
     right: -150%;
@@ -184,6 +169,57 @@ $offset-car-3: 247px;
 
 .scene {
 
+  $offset-car-0: 268;
+  $offset-car-1: 250;
+  $offset-car-2: 205;
+  $offset-car-3: 247;
+
+  @keyframes car-0 {
+    from {
+      left: -$offset-car-1;
+    } to {
+      left: 100%;
+    }
+  }
+
+  @keyframes car-1 {
+    from {
+      left: -$offset-car-2;
+    } to {
+      left: 100%;
+    }
+  }
+
+  @keyframes car-2 {
+    from {
+      left: -$offset-car-3;
+    } to {
+      left: 100%;
+    }
+  }
+
+  @keyframes car-3 {
+    from {
+      left: -$offset-car-3;
+    } to {
+      left: 100%;
+    }
+  }
+
+  @keyframes car-wheel {
+    from {
+      transform: rotate(0);
+    } to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  &__wrap {
+    // Stylization
+    overflow: hidden;
+  }
+
   &__title {
     // Block model
     margin: 0 0 15px 0;
@@ -203,7 +239,7 @@ $offset-car-3: 247px;
     // Position
     position: relative;
     // Block model
-    height: 900px;
+    height: auto;
     width: 100%;
 
     &-sun {
@@ -212,7 +248,7 @@ $offset-car-3: 247px;
       left: 75%;
       top: 40%;
       // Block model
-      width: 60px;
+      width: auto;
       height: 60px;
       z-index: -1;
       // Stylization
@@ -241,11 +277,11 @@ $offset-car-3: 247px;
       &-1 {
         // Position
         position: absolute;
-        top: 2px;
+        top: 1%;
         left: -#{$offset-cloud-1};
         // Block model
-        width: 92px;
-        height: 27px;
+        width: auto;
+        height: 20%;
         // Stylization
         fill: $color_anim_purple;
         // Animation
@@ -255,11 +291,11 @@ $offset-car-3: 247px;
       &-2 {
         // Position
         position: absolute;
-        bottom: 52px;
+        bottom: 38%;
         left: -#{$offset-cloud-2};
         // Block model
-        width: 187px;
-        height: 40px;
+        width: auto;
+        height: 30%;
         // Stylization
         fill: $color_anim_purple;
         // Animation
@@ -272,8 +308,8 @@ $offset-car-3: 247px;
         top: 0;
         left: -#{$offset-cloud-3};
         // Block model
-        width: 157px;
-        height: 33px;
+        width: auto;
+        height: 24%;
         // Stylization
         fill: $color_anim_purple;
         // Animation
@@ -286,8 +322,8 @@ $offset-car-3: 247px;
         bottom: 1%;
         left: -#{$offset-cloud-4};
         // Block model
-        width: 202px;
-        height: 42px;
+        width: auto;
+        height: 31%;
         // Stylization
         fill: $color_anim_purple;
         // Animation
@@ -297,11 +333,11 @@ $offset-car-3: 247px;
       &-5 {
         // Position
         position: absolute;
-        bottom: 65px;
+        bottom: 26%;
         left: -#{$offset-cloud-5};
         // Block model
-        width: 93px;
-        height: 27px;
+        width: auto;
+        height: 20%;
         // Stylization
         fill: $color_anim_purple;
         // Animation
@@ -311,11 +347,11 @@ $offset-car-3: 247px;
       &-6 {
         // Position
         position: absolute;
-        bottom: 60px;
+        bottom: 44%;
         left: -#{$offset-cloud-6};
         // Block model
-        width: 165px;
-        height: 35px;
+        width: auto;
+        height: 26%;
         // Stylization
         fill: $color_anim_purple;
         // Animation
@@ -331,11 +367,10 @@ $offset-car-3: 247px;
       justify-content: center;
       // Block model
       padding: 0 0 1% 0;
-      // Stylization
-      overflow: hidden;
 
       &-img {
         // Block model
+        width: 100%;
         margin: 0 0 10px 0;
       }
 
@@ -359,7 +394,7 @@ $offset-car-3: 247px;
         width: #{$offset-car-0}px;
         height: #{($offset-car-0*0.48)}px;
         // Animation
-        animation: car-1 15s linear 5s infinite;
+        animation: car-0 15s linear 5s infinite;
 
         &-body {
           // Position
@@ -446,18 +481,27 @@ $offset-car-3: 247px;
         // Position
         position: absolute;
         bottom: 50%;
-        left: -$offset-car-2;
+        left: -#{$offset-car-2}px;
         // Block model
-        width: 205px;
-        height: 100px;
+        width: #{$offset-car-2}px;
+        height: #{($offset-car-2*0.48)}px;
         // Animation
-        animation: car-1 20s linear 7s infinite;
+        animation: car-2 20s linear 7s infinite;
+
+        &-body {
+          // Block model
+          width: 100%;
+          height: auto;
+        }
 
         &-wheel-b {
           // Position
           position: absolute;
           bottom: 0;
-          left: 17px;
+          left: 8%;
+          // Block model
+          width: 16%;
+          height: auto;
           // Animation
           animation: car-wheel .7s linear 1s infinite;
         }
@@ -466,7 +510,10 @@ $offset-car-3: 247px;
           // Position
           position: absolute;
           bottom: 0;
-          right: 17px;
+          right: 8%;
+          // Block model
+          width: 16%;
+          height: auto;
           // Animation
           animation: car-wheel .7s linear 1s infinite;
         }
@@ -477,18 +524,27 @@ $offset-car-3: 247px;
         // Position
         position: absolute;
         bottom: 70%;
-        left: -$offset-car-3;
+        left: -#{$offset-car-3}px;
         // Block model
-        width: 247px;
-        height: auto;
+        width: #{$offset-car-3}px;
+        height: #{($offset-car-3*0.26)}px;
         // Animation
-        animation: car-1 5s linear 10s normal infinite running;
+        animation: car-3 5s linear 10s normal infinite running;
+
+        &-body {
+          // Block model
+          width: 100%;
+          height: auto;
+        }
 
         &-wheel-b {
           // Position
           position: absolute;
-          bottom: 7px;
-          left: 45px;
+          bottom: 4%;
+          left: 18%;
+          // Block model
+          width: 9%;
+          height: auto;
           // Animation
           animation: car-wheel 1s linear 1s infinite;
         }
@@ -496,8 +552,11 @@ $offset-car-3: 247px;
         &-wheel-f {
           // Position
           position: absolute;
-          bottom: 7px;
-          right: 38px;
+          bottom: 4%;
+          right: 15%;
+          // Block model
+          width: 9%;
+          height: auto;
           // Animation
           animation: car-wheel 1s linear 1s infinite;
         }
@@ -509,7 +568,8 @@ $offset-car-3: 247px;
         position: absolute;
         bottom: 115%;
         left: 35%;
-
+        // Block model
+        width: 151px;
       }
 
       &-lantern-2 {
@@ -517,13 +577,15 @@ $offset-car-3: 247px;
         position: absolute;
         bottom: 115%;
         right: -2%;
+        // Block model
+        width: 151px;
 
       }
 
       &-lantern-3 {
         // Position
         position: absolute;
-        bottom: 12%;
+        bottom: 70%;
         right: 17%;
         // Block model
          width: 215px;
@@ -547,12 +609,14 @@ $offset-car-3: 247px;
         position: absolute;
         bottom: 20%;
         right: 0%;
+        // Block model
+        width: 800px;
         // Animation
         animation: taxi 20s ease 10s 1 both running;
 
         &-body {
           // Block model
-          width: 888px;
+          width: 100%;
         }
 
         &-wheel-f {
@@ -625,11 +689,18 @@ $offset-car-3: 247px;
       &-man {
         // Position
         position: absolute;
-        bottom: 25%;
+        bottom: 60%;
         left: 24%;
         // Block model
         width: 210px;
         height: 362px;
+
+        &-container {
+          // Position
+          position: relative;
+          // Block model
+          height: 100%;
+        }
 
         &-hand {
           // Position
@@ -649,7 +720,7 @@ $offset-car-3: 247px;
         &-body {
           // Position
           position: absolute;
-          top: 0;
+          bottom: 0;
           left: 0;
           // Block model
           width: 100%;
@@ -676,7 +747,7 @@ $offset-car-3: 247px;
         &-message-2 {
           // Position
           position: absolute;
-          top: -30%;
+          top: -20%;
           left: -5%;
           // Block model
           width: 210px;
@@ -703,7 +774,7 @@ $offset-car-3: 247px;
       &-girl {
         // Position
         position: absolute;
-        bottom: 5%;
+        bottom: 60%;
         left: 18%;
 
         &-body {
@@ -740,8 +811,413 @@ $offset-car-3: 247px;
 
       }
 
+    }
+
+  }
+
+}
+
+@media (max-width:990px) {
+
+  $offset-car-0-middle: 201;
+  $offset-car-1-middle: 188;
+  $offset-car-2-middle: 180;
+  $offset-car-3-middle: 185;
+
+  @keyframes car-0-middle {
+    from {
+      left: -$offset-car-0-middle;
+    } to {
+      left: 100%;
+    }
+  }
+
+  @keyframes car-1-middle {
+    from {
+      left: -$offset-car-1-middle;
+    } to {
+      left: 100%;
+    }
+  }
+
+  @keyframes car-2-middle {
+    from {
+      left: -$offset-car-2-middle;
+    } to {
+      left: 100%;
+    }
+  }
+
+  @keyframes car-3-middle {
+    from {
+      left: -$offset-car-3-middle;
+    } to {
+      left: 100%;
+    }
+  }
 
 
+  .scene {
+
+    &__anim {
+      // Block model
+      height: auto;
+
+      &-sun {
+        // Block model
+        height: 45px;
+      }
+
+      &-sky {
+        // Block model
+        height: 90px;
+      }
+
+      &-city {
+
+        &-car-0 {
+          // Block model
+          width: #{$offset-car-0-middle}px;
+          height: #{($offset-car-0-middle*0.48)}px;
+          // Animation
+          animation: car-0-middle 15s linear 5s infinite;
+        }
+
+        &-car-1 {
+          // Block model
+          width: #{$offset-car-1-middle}px;
+          height: #{($offset-car-1-middle*0.43)}px;
+          // Animation
+          animation: car-1-middle 10s linear 1s infinite;
+        }
+
+        &-car-2 {
+          // Block model
+          width: #{$offset-car-2-middle}px;
+          height: #{($offset-car-2-middle*0.48)}px;
+          // Animation
+          animation: car-2-middle 20s linear 7s infinite;
+        }
+
+        &-car-3 {
+          // Block model
+          width: #{$offset-car-3-middle}px;
+          height: #{($offset-car-3-middle*0.26)}px;
+          // Animation
+          animation: car-3-middle 5s linear 10s normal infinite running;
+        }
+
+        &-road-2 {
+          // Block model
+          height: 70px;
+        }
+
+        &-lantern-1 {
+          // Block model
+          width: 130px;
+        }
+
+        &-lantern-2 {
+          // Block model
+          width: 130px;
+        }
+
+        &-taxi {
+          // Block model
+          width: 650px;
+
+          &-message {
+            // Position
+            left: 22%;
+          }
+
+        }
+
+        &-man {
+          // Position
+          left: 25%;
+          bottom: 63%;
+          // Block model
+          width: 140px;
+          height: 240px;
+
+          &-hand {
+            // Position
+            top: -11%;
+          }
+
+          &-message {
+            // Position
+            left: -20%;
+          }
+
+          &-message-2 {
+            // Position
+            left: -20%;
+          }
+
+        }
+
+        &-girl {
+          // Position
+          left: 15%;
+          bottom: 60%;
+          // Block model
+          width: 120px;
+
+          &-body {
+            // Block model
+            width: 100%;
+          }
+
+          &-message {
+            // Position
+            left: -95%;
+          }
+
+        }
+
+        &-pedestrian-area {
+          // Block model
+          height: 70px;
+        }
+
+        &-lantern-3 {
+          // Posisiton
+          bottom: 65%;
+          right: 10%;
+          // Block model
+          width: 190px;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width:768px) {
+
+  $offset-car-0-small: 134;
+  $offset-car-1-small: 125;
+  $offset-car-2-small: 120;
+  $offset-car-3-small: 123;
+
+  @keyframes car-0-small {
+    from {
+      left: -$offset-car-0-small;
+    } to {
+      left: 100%;
+    }
+  }
+
+  @keyframes car-1-small {
+    from {
+      left: -$offset-car-1-small;
+    } to {
+      left: 100%;
+    }
+  }
+
+  @keyframes car-2-small {
+    from {
+      left: -$offset-car-2-small;
+    } to {
+      left: 100%;
+    }
+  }
+
+  @keyframes car-3-small {
+    from {
+      left: -$offset-car-3-small;
+    } to {
+      left: 100%;
+    }
+  }
+
+
+  .scene {
+
+    &__title {
+      @include text(36px,44px);
+      // Block model
+      margin: 0 0 10px 0;
+    }
+
+    &__anim {
+
+      &-city {
+
+        &-car-0 {
+          // Block model
+          width: #{$offset-car-0-small}px;
+          height: #{($offset-car-0-small*0.48)}px;
+          // Animation
+          animation: car-0-small 15s linear 5s infinite;
+        }
+
+        &-car-1 {
+          // Block model
+          width: #{$offset-car-1-small}px;
+          height: #{($offset-car-1-small*0.43)}px;
+          // Animation
+          animation: car-1-small 10s linear 1s infinite;
+        }
+
+        &-car-2 {
+          // Block model
+          width: #{$offset-car-2-small}px;
+          height: #{($offset-car-2-small*0.48)}px;
+          // Animation
+          animation: car-2-small 20s linear 7s infinite;
+        }
+
+        &-car-3 {
+          // Block model
+          width: #{$offset-car-3-small}px;
+          height: #{($offset-car-3-small*0.26)}px;
+          // Animation
+          animation: car-3-small 5s linear 10s normal infinite running;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width:580px) {
+
+  .scene {
+
+    &__nav {
+      // Block model
+      margin: 0;
+    }
+
+    &__container {
+      // Block model
+      padding: 0 20px;
+    }
+
+    &__anim {
+
+      &-sun {
+        // Block model
+        height: 30px;
+      }
+
+      &-sky {
+        // Block model
+        height: 50px;
+      }
+
+      &-city {
+
+        &-road-2 {
+          // Block model
+          height: 40px;
+        }
+
+        &-lantern-1 {
+          // Block model
+          width: 50px;
+        }
+
+        &-lantern-2 {
+          // Block model
+          width: 50px;
+        }
+
+        &-lantern-3 {
+          // Block model
+          width: 80px;
+        }
+
+        &-taxi {
+          // Block model
+          width: 300px;
+
+          &-message {
+            // Position
+            left: 1%;
+            // Typography
+            font-size: 14px;
+          }
+
+        }
+
+        &-man {
+          // Position
+          left: 27%;
+          bottom: 55%;
+          // Block model
+          width: 70px;
+          height: 122px;
+
+          &-message {
+            // Position
+            left: -50%;
+            // Block model
+            height: 30px;
+            // Typography
+            font-size: 14px;
+          }
+
+          &-message-2 {
+            // Position
+            left: -60%;
+            // Block model
+            height: 30px;
+            // Typography
+            font-size: 14px;
+          }
+
+        }
+
+        &-girl {
+          // Block model
+          width: 66px;
+          height: 92px;
+
+          &-message {
+            // Position
+            // top: 0;
+            left: -38%;
+            // Block model
+            width: 200px;
+            // height: 30px;
+            // Typography
+            font-size: 14px;
+          }
+
+          &-arrow {
+            // Position
+            left: 10%;
+            top: 75%;
+          }
+
+        }
+
+      }
+
+    }
+
+
+  }
+
+}
+
+@media (max-width:480px) {
+
+  .scene {
+
+    &__title {
+      @include text(24px,29px);
     }
 
   }

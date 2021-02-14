@@ -1,6 +1,12 @@
 // Main page
 @import "../../components/common.scss";
 
+@mixin text($size,$height) {
+  // Typography
+  font-size: $size;
+  line-height: $height;
+}
+
 // Frames
 @keyframes page {
   from {
@@ -343,6 +349,76 @@ $color_yellow: #FFCE54;
         animation: image 1s ease-in #{(13*0.1+5.5)}s forwards running;
       }
 
+    }
+
+  }
+
+}
+
+@media (max-width:990px) {
+
+  .svg {
+
+    &__title {
+      // Typography
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 30px 0;
+    }
+
+    &__web {
+      // Block model
+      width: 65%;
+    }
+
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .svg {
+
+    &__title {
+      @include text(36px,44px);
+      // Block model
+      margin: 0 0 10px 0;
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 20px 0;
+    }
+
+    &__web {
+      // Block model
+      width: 85%;
+    }
+
+  }
+
+}
+
+@media (max-width:580px) {
+
+  .svg {
+
+    &__title {
+      @include text(24px,29px);
+    }
+
+    &__wrap {
+      // Block model
+      padding: 0 20px;
+    }
+
+    &__web {
+      // Block model
+      width: auto;
     }
 
   }

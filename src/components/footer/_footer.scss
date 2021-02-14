@@ -33,108 +33,108 @@
       margin: 0 0 24px 0;
     }
 
-  }
-
-  &__section-title {
-    // Block model
-    margin: 0 0 21px 0;
-    padding: 0 0 23px 0;
-    // Typography
-    color: $color_dark-grey;
-    // Stylization
-    border-bottom: solid 1px $color_light-grey;
-  }
-
-  &__section-link {
-    // Typography
-    color: $color_white;
-    line-height: 37px;
-    // Animation
-    transition: opacity ease-in 0.4s;
-
-    &:hover {
+    &-title {
+      // Block model
+      margin: 0 0 21px 0;
+      padding: 0 0 23px 0;
+      // Typography
+      color: $color_dark-grey;
       // Stylization
-      opacity: 0.5;
-      // Animation
-      transition: opacity ease-in 0.4s;
+      border-bottom: solid 1px $color_light-grey;
     }
 
-    &:active {
-      // Stylization
-      opacity: 0.2;
+    &-link {
+      // Typography
+      color: $color_white;
+      line-height: 37px;
       // Animation
       transition: opacity ease-in 0.4s;
+
+      &:hover {
+        // Stylization
+        opacity: 0.5;
+        // Animation
+        transition: opacity ease-in 0.4s;
+      }
+
+      &:active {
+        // Stylization
+        opacity: 0.2;
+        // Animation
+        transition: opacity ease-in 0.4s;
+      }
+
     }
 
-  }
+    &-form {
+      // Position
+      display: flex;
+      // Block model
+      margin: 0 0 25px 0;
+    }
 
-  &__section-form {
-    // Position
-    display: flex;
-    // Block model
-    margin: 0 0 25px 0;
-  }
-
-  &__section-input {
-    // Block model
-    width: 100%;
-    padding: 9px 0 9px 15px;
-    box-sizing: border-box;
-    // Typography
-    color: $color_white;
-    font-size: 16px;
-    font-family: $font-primary;
-    // Stylization
-    border: solid 1px $color_light-grey;
-    background-color: $color_light-grey;
-    // Animation
-    transition: border ease-in .4s;
-
-    &:focus, &:active {
+    &-input {
+      // Block model
+      width: 100%;
+      padding: 9px 0 9px 15px;
+      box-sizing: border-box;
+      // Typography
+      color: $color_white;
+      font-size: 16px;
+      font-family: $font-primary;
       // Stylization
-      outline: 0;
-      border: solid 1px $color_white;
+      border: solid 1px $color_light-grey;
+      background-color: $color_light-grey;
       // Animation
       transition: border ease-in .4s;
+
+      &:focus, &:active {
+        // Stylization
+        outline: 0;
+        border: solid 1px $color_white;
+        // Animation
+        transition: border ease-in .4s;
+      }
+
     }
 
-  }
-
-  &__section-button {
-    // Block model
-    margin: 0 0 0 -1px;
-    width: auto;
-    height: 100%;
-    padding: 9px 22px;
-    box-sizing: border-box;
-    // Typography
-    color: $color_white;
-    font-size: 16px;
-    font-family: $font-primary;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    // Stylization
-    outline: solid 1px $color_black;
-    border: none;
-    background-color: $color_black;
-    // Animation
-    transition: outline-color ease-in .4s,
-                background-color ease-in .4s;
-
-    &:hover {
+    &-button {
+      // Block model
+      margin: 0 0 0 -1px;
+      width: auto;
+      height: 100%;
+      padding: 9px 22px;
+      box-sizing: border-box;
+      // Typography
+      color: $color_white;
+      font-size: 16px;
+      font-family: $font-primary;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       // Stylization
-      cursor: pointer;
-      outline: solid 1px $color_grey;
-      background-color: $color_grey;
-    }
-
-    &:focus {
-      // Stylization
-      cursor: pointer;
-      outline: solid 1px $color_white;
-      outline-offset: -1px;
+      outline: solid 1px $color_black;
+      border: none;
       background-color: $color_black;
+      // Animation
+      transition: outline-color ease-in .4s,
+                  background-color ease-in .4s;
+
+      &:hover {
+        // Stylization
+        cursor: pointer;
+        outline: solid 1px $color_grey;
+        background-color: $color_grey;
+      }
+
+      &:focus {
+        // Stylization
+        cursor: pointer;
+        outline: solid 1px $color_white;
+        outline-offset: -1px;
+        background-color: $color_black;
+      }
+
     }
 
   }
@@ -148,7 +148,18 @@
     // Stylization
     border-top: solid 1px $color_white;
 
-    // Put in $__information
+    &-rating {
+      // Position
+      flex: 1;
+    }
+
+    &-license {
+      // Position
+      display: flex;
+      flex-flow: row;
+      flex: 2;
+    }
+
     &-item {
       // Position
       display: flex;
@@ -317,6 +328,112 @@
         cursor: pointer;
         // Animation
         transition: color ease-in 0.4s, text-transform ease-in 0.4s;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width: 1140px) {
+
+  .footer {
+
+    &__section {
+
+      &-input {
+        // Position
+        flex: 1;
+        // Block model
+        width: auto;
+      }
+
+      &-button {
+        // Block model
+        width: auto;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width: 960px) {
+
+  .footer {
+
+    &__information {
+      // Position
+      flex-flow: column;
+
+      &-rating {
+        // Block model
+        margin: 0 0 20px 0;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .footer {
+    // Block model
+    padding: 70px 0;
+
+    &__sections {
+      // Position
+      flex-flow: column;
+    }
+
+    &__section {
+      // Block model
+      margin: 0 0 40px 0;
+
+      &-list {
+        // Position
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      &-item {
+        // Block model
+        width: 50%;
+      }
+
+      &-link {
+        // Typography
+        font-size: 14px;
+      }
+
+      &-button {
+        // Block model
+        padding: 11px 23px;
+      }
+
+    }
+
+    &__information {
+      // Position
+      flex-flow: column;
+
+      &-rating {
+        // Block model
+        margin: 0 0 15px 0;
+      }
+
+      &-license {
+        // Position
+        flex-flow: column;
+      }
+
+      &-copyright {
+        // Block model
+        margin: 0 0 15px 0;
       }
 
     }

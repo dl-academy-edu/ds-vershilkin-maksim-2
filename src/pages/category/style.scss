@@ -1,6 +1,12 @@
 // Category
 @import "../../components/common.scss";
 
+@mixin text($size,$height) {
+  // Typography
+  font-size: $size;
+  line-height: $height;
+}
+
 .category {
   // Self variable
   $s: &;
@@ -422,7 +428,7 @@
     // Block model
     width: 30%;
     margin: 0 20px 20px 0;
-    border-box: box-sizing;
+    box-sizing: border-box;
 
     &:nth-child(3) {
       // Block model
@@ -506,8 +512,295 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: end;
     // Block model
     margin: 0 0 60px 0;
+  }
+
+}
+
+@media (max-width:990px) {
+
+  .category {
+
+    &__form {
+
+      &-field {
+
+        &--third {
+          // Block model
+          margin-right: 0;
+        }
+
+      }
+
+    }
+
+    &__item {
+      // Block model
+      width: 31%;
+
+      &:nth-child(3n) {
+        // Block model
+        margin-right: 0;
+      }
+
+      &:last-of-type {
+        // Block model
+        // margin-right: 0;
+      }
+
+    }
+
+    &__figure {
+      // Position
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__image {
+      // Block model
+      width: 100%;
+      height: auto;
+    }
+
+    &__more {
+      // Position
+      top: auto;
+      left: auto;
+      right: auto;
+      // Block model
+      padding: 82px 20px 96px 20px;
+      box-sizing: border-box;
+      // Typography
+      font-size: 18px;
+    }
+
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .category {
+
+    &__title {
+      @include text(36px,44px);
+      // Block model
+      margin: 0 0 10px 0;
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 30px 0;
+    }
+
+    &__form {
+
+      &-field {
+
+        &--first {
+          // Block model
+          width: 100%;
+          margin: 0 0 50px 0;
+        }
+
+        &--second {
+          // Block model
+          margin: 0 65px 25px 0;
+        }
+
+        &--third {
+          // Block model
+          width: 50%;
+        }
+
+      }
+
+      &-cost {
+        // Block model
+        width: 50%;
+      }
+
+      &-min {
+        // Block model
+        width: auto;
+      }
+
+    }
+
+    &__item {
+      // Block model
+      width: 29%;
+
+    }
+
+  }
+
+}
+
+@media (max-width:580px) {
+
+  .category {
+
+    &__wrap {
+      // Block model
+      padding: 25px 20px;
+
+    }
+
+  }
+
+}
+
+@media (max-width:520px) {
+
+  .category {
+
+    &__wrap {
+      // Block model
+      padding: 0 20px;
+    }
+
+    &__form {
+
+      &-field {
+
+        &--fourth {
+          // Block model
+          width: 100%;
+          margin: 0 0 25px 0;
+        }
+
+      }
+
+      &-submit {
+        // Block model
+        margin: 0 auto;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width:480px) {
+
+  .category {
+
+    &__title {
+      @include text(24px,29px);
+      // Block model
+      margin: 0 0 10px 0;
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 20px 0;
+
+    }
+
+    &__form {
+
+      &-field {
+
+        &--third {
+          // Block model
+          width: auto;
+        }
+
+      }
+
+    }
+
+    &__item {
+      // Block model
+      width: 45%;
+
+      &:nth-child(2n) {
+        // Block model
+        margin-right: 0;
+      }
+
+      &:nth-child(3n) {
+        // Block model
+        margin-right: 20px;
+      }
+
+      &:last-of-type {
+        // Block model
+        margin-right: 0;
+      }
+
+    }
+
+    &__price {
+      // Typography
+      font-size: 12px;
+    }
+
+  }
+
+
+}
+
+@media (max-width:375px) {
+
+  .category {
+
+    &__form {
+      // Typography
+      @include text(14px,19px);
+
+    }
+
+  }
+
+}
+
+@media (max-width:360px) {
+
+  .category {
+
+    &__form {
+      // Typography
+      @include text(14px,19px);
+
+      &-cost {
+        // Block model
+        width: 75%;
+      }
+
+      &-max {
+        // Block model
+        width: 75%;
+      }
+
+    }
+
+    &__item {
+      // Block model
+      width: auto;
+
+      &:nth-child(2n) {
+        // Block model
+        margin-right: 0;
+      }
+
+      &:nth-child(3n) {
+        // Block model
+        margin-right: 0;
+      }
+
+      &:last-of-type {
+        // Block model
+        margin-bottom: 0;
+      }
+
+    }
+
   }
 
 }

@@ -1,4 +1,9 @@
 // Pagination styles
+@mixin page($size,$height) {
+  // Typography
+  font-size: $size;
+  line-height: $height;
+}
 
 .pagination {
 
@@ -80,5 +85,21 @@
   }
 
 
+
+}
+
+@media (max-width:375px) {
+
+  .pagination {
+
+    &__item {
+
+      &-page {
+        @include page(14px,17px);
+      }
+
+    }
+
+  }
 
 }
