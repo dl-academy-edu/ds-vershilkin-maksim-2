@@ -1285,6 +1285,14 @@
 
   }
 
+  .benefits {
+
+    &__title {
+      @include text(24px,29px);
+    }
+
+  }
+
 }
 
 @media (max-width:480px) {
@@ -1302,6 +1310,11 @@
   .categories {
     // Block model
     padding-bottom: 80px;
+
+    &__wrap {
+      // Block model
+      padding: 0 0 0 20px;
+    }
 
     &__title {
       @include text(24px,29px);

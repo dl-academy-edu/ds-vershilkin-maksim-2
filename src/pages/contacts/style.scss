@@ -284,7 +284,7 @@
 
       &-form {
         // Block model
-        width: auto;
+        width: 680px;
         margin-right: 0;
         padding: 42px 56px;
       }
@@ -309,6 +309,23 @@
 
   }
 
+
+}
+
+@media (max-width:800px) {
+
+  .contacts {
+
+    &__feedback {
+
+      &-form {
+        // Block model
+        width: auto;
+      }
+
+    }
+
+  }
 
 }
 

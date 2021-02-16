@@ -165,15 +165,29 @@
 
   &__mobile {
     // Position
+    position: absolute;
     display: none;
+    justify-content: center;
     // Block model
-    padding: 25px 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    // Stylization
+    background-color: $color-purple-trns;
 
     &-list {
       // Position
       display: flex;
       flex-flow: column;
-
+      align-self: baseline;
+      // Block model
+      width: 100%;
+      height: auto;
+      padding: 25px 0 25px 40px;
+      // Stylization
+      background-color: $color_white;
+      box-shadow: $color_shadow 0 4px 4px;
+      
     }
 
     &-item {
@@ -188,6 +202,7 @@
       // Typography
       color: $color_black;
       font-size: 16px;
+      line-height: 22px;
       text-transform: uppercase;
 
       &--highlighted {
@@ -197,6 +212,18 @@
         font-weight: 600;
       }
 
+    }
+
+    &-bg {
+      // Position
+      display: none;
+      position: absolute;
+      top: 0;
+      // Block model
+      width: 100%;
+      height: 100%;
+      // Stylization
+      background-color: $color-purple-trns;
     }
 
   }
@@ -234,6 +261,11 @@
     &__link {
       // Block model
       display: none;
+    }
+
+    &__mobile {
+      // Position
+      display: flex;
     }
 
   }
