@@ -95,6 +95,9 @@
     display: none;
     flex: 1;
     justify-content: center;
+    align-items: center;
+    // Block model
+    padding: 0 40px 0 0;
 
     &-button {
       // Typography
@@ -103,6 +106,25 @@
       text-transform: uppercase;
       //Animation
       transition: opacity ease-in 0.4s;
+
+      &--hidden {
+        // Position
+        display: none;
+      }
+
+    }
+
+    &-close {
+      // Position
+      display: block;
+      // Block model
+      width: 16px;
+      height: 16px;
+
+      &--hidden {
+        // Position
+        display: none;
+      }
 
     }
 
@@ -166,7 +188,7 @@
   &__mobile {
     // Position
     position: absolute;
-    display: none;
+    display: flex;
     justify-content: center;
     // Block model
     width: 100%;
@@ -174,6 +196,11 @@
     z-index: 999;
     // Stylization
     background-color: $color-purple-trns;
+
+    &--hidden {
+      // Position
+      display: none;
+    }
 
     &-list {
       // Position
@@ -183,11 +210,11 @@
       // Block model
       width: 100%;
       height: auto;
-      padding: 25px 0 25px 40px;
+      padding: 25px 0 25px;
       // Stylization
       background-color: $color_white;
       box-shadow: $color_shadow 0 4px 4px;
-      
+
     }
 
     &-item {
@@ -261,11 +288,6 @@
     &__link {
       // Block model
       display: none;
-    }
-
-    &__mobile {
-      // Position
-      display: flex;
     }
 
   }
