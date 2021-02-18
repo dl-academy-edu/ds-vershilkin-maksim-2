@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat:wght@300;700&family=Open+Sans&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
@@ -70,9 +71,9 @@
 
            </div>
 
-           <figure class="slider__stuff-wrap">
-             <img class="slider__stuff-image" src="static/images/img_slide_1.png" alt="Toy image" width="636" height="461">
-           </figure>
+           <picture class="slider__stuff-wrap">
+               <img class="slider__stuff-image" src="static/images/img_slide_1.png" srcset="static/images/img_slide_1.png, static/images/img_slide_1_x2.png 2x" alt="Toy image" width="636" height="461">
+           </picture>
 
            <div class="slider__information">
              <span class="slider__information-content">Free (continental) USA shipping on all orders of $100 USD or more!</span>
@@ -89,7 +90,9 @@
 
            <h2 class="categories__title">Category products</h2>
 
-           <ul class="categories__list">
+           <div class="categories__carousel">
+
+             <ul class="categories__list">
 
              <li class="categories__list-item categories__list-item--first">
                <a class="categories__list-link" href="#">Apparel<br>kids</a>
@@ -109,23 +112,32 @@
 
            </ul>
 
-           <!-- Category navigation -->
-           <button class="categories__button" type="button" name="categories-left">
-             Previous category
-             <svg class="categories__button-svg" viewbox="0 0 37 37">
-               <polyline class="categories__button-svg-path categories__button-svg-path--left" points="26 5, 13 18, 26 31" />
-             </svg>
-           </button>
-           <button class="categories__button" type="button" name="categories-right">
-             Next category
-             <svg class="categories__button-svg" viewbox="0 0 37 37">
-               <polyline class="categories__button-svg-path categories__button-svg-path--left" points="12 5, 25 18, 12 31" />
-            </svg>
-           </button>
+           </div>
 
-           <p class="categories__nav-information">
-             Modern finds for the modern home. Curated goods by unique designers around the world from fashion to furniture for kids and adults.
-           </p>
+
+           <!-- Category navigation -->
+           <div class="categories__nav">
+
+             <button class="categories__nav-button" type="button" name="categories-left">
+               Previous category
+               <svg class="categories__nav-button-svg" viewbox="0 0 37 37">
+                 <polyline class="categories__nav-button-svg-path categories__nav-button-svg-path--left" points="26 5, 13 18, 26 31" />
+               </svg>
+             </button>
+
+             <button class="categories__nav-button" type="button" name="categories-right">
+               Next category
+               <svg class="categories__nav-button-svg" viewbox="0 0 37 37">
+                 <polyline class="categories__nav-button-svg-path categories__nav-button-svg-path--left" points="12 5, 25 18, 12 31" />
+               </svg>
+             </button>
+
+             <p class="categories__nav-information">
+               Modern finds for the modern home. Curated goods by unique designers around the world from fashion to furniture for kids and adults.
+             </p>
+
+           </div>
+
 
          </div>
 
@@ -136,9 +148,11 @@
 
          <div class="benefits__wrap container">
 
-           <figure class="benefits__side">
-             <img class="benefits__side-image" src="static/images/img_benefit_1.jpg" alt="Benefit image" width="480" height="559">
-           </figure>
+           <picture class="benefits__side">
+             <source class="benefits__side-image" srcset="static/images/img_benefit_1_small.jpg, static/images/img_benefit_1_small_x2.jpg 2x" media="(max-width:700px)">
+             <source class="benefits__side-image" srcset="static/images/img_benefit_1_medium.jpg, static/images/img_benefit_1_medium_x2.jpg 2x" media="(max-width:990px)">
+             <img class="benefits__side-image" src="static/images/img_benefit_1.jpg" srcset="static/images/img_benefit_1.jpg, static/images/img_benefit_1_x2.jpg 2x" alt="Benefit image" width="480" height="559">
+           </picture>
 
            <div class="benefits__information">
 
@@ -189,19 +203,27 @@
            <ul class="partners__list">
 
              <li class="partners__item">
-               <img class="partners__image" src="static/images/img_partner_1.png" alt="Mail group logo" width="193" height="60">
+               <picture>
+                 <img class="partners__image" src="static/images/img_partner_1.png" srcset="static/images/img_partner_1.png, static/images/img_partner_1_x2.png 2x" alt="Mail group logo" width="193" height="60">
+               </picture>
              </li>
 
              <li class="partners__item">
-               <img class="partners__image" src="static/images/img_partner_2.png" alt="Apple logo" width="179" height="61">
+               <picture>
+                 <img class="partners__image" src="static/images/img_partner_2.png" srcset="static/images/img_partner_2.png, static/images/img_partner_2_x2.png 2x" alt="Apple logo" width="179" height="61">
+               </picture>
              </li>
 
              <li class="partners__item">
-               <img class="partners__image" src="static/images/img_partner_3.png" alt="Eltex logo" width="216" height="46">
+               <picture>
+                 <img class="partners__image" src="static/images/img_partner_3.png" srcset="static/images/img_partner_3.png, static/images/img_partner_3_x2.png 2x" alt="Eltex logo" width="216" height="46">
+               </picture>
              </li>
 
              <li class="partners__item">
-               <img class="partners__image" src="static/images/img_partner_4.png" alt="Owox logo" width="211" height="40">
+               <picture>
+                 <img class="partners__image" src="static/images/img_partner_4.png" srcset="static/images/img_partner_4.png, static/images/img_partner_4_x2.png 2x" alt="Owox logo" width="211" height="40">
+               </picture>
              </li>
 
            </ul>
@@ -251,7 +273,7 @@
 
              <div class="about__contacts-map">
 
-                 @@include('map/index.html')
+               @@include('map/index.html')
 
              </div>
 
@@ -336,6 +358,7 @@
 
 
     <script src="scripts.js"></script>
+    <script src="mobile-menu.js"></script>
 
   </body>
 

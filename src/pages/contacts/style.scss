@@ -1,6 +1,11 @@
 // Contacts
 @import "../../components/common.scss";
 
+@mixin text($size,$height) {
+  // Typography
+  font-size: $size;
+  line-height: $height;
+}
 
 .contacts {
   // Self variable
@@ -91,6 +96,7 @@
 
     &-input {
       // Block model
+      width: 100%;
       padding: 14px 0 11px 20px;
       box-sizing: border-box;
       // Typography
@@ -195,6 +201,7 @@
         // Position
         content: '';
         position: absolute;
+        top: 0;
         left: 0;
         // Block model
         width: 18px;
@@ -239,6 +246,184 @@
       flex: 1;
     }
 
+
+  }
+
+}
+
+@media (max-width:1280px) {
+
+  .contacts {
+
+    &__feedback {
+
+      &-form {
+        // Block model
+        margin: 0 40px 0 0;
+      }
+
+    }
+
+  }
+
+
+}
+
+@media (max-width:1140px) {
+
+  .contacts {
+
+    &__nav {
+      // Block model
+      margin: 0 0 30px 0;
+    }
+
+    &__feedback {
+      // Position
+      flex-flow: column-reverse;
+
+      &-form {
+        // Block model
+        width: 680px;
+        margin-right: 0;
+        padding: 42px 56px;
+      }
+
+      &-information {
+        // Position
+        display: block;
+      }
+
+    }
+
+    &__information {
+
+      &-wrap {
+        // Block model
+        margin: 0 0 45px 0;
+        // Typography
+        text-align: left;
+      }
+
+    }
+
+  }
+
+
+}
+
+@media (max-width:800px) {
+
+  .contacts {
+
+    &__feedback {
+
+      &-form {
+        // Block model
+        width: auto;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .contacts {
+
+    &__title {
+      @include text(36px,44px);
+      // Block model
+      margin: 0 0 10px 0;
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 30px 0;
+    }
+
+    &__feedback {
+
+      &-field {
+        // Block model
+        width: 100%;
+      }
+
+    }
+
+    &__information {
+      // Typography
+      font-size: 14px;
+      line-height: 19px;
+
+      &--highlighted {
+        // Typography
+        font-size: 24px;
+        line-height: 34px;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width:580px) {
+
+  .contacts {
+
+    &__wrap {
+      // Block model
+      padding: 0 20px;
+    }
+
+    &__title {
+      @include text(24px,29px);
+      // Block model
+      margin: 0 0 10px 0;
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 25px 0;
+    }
+
+    &__feedback {
+
+      &-form {
+        // Block model
+        padding: 25px;
+      }
+
+      &-wrapper {
+
+        &--half {
+          // Position
+          flex-flow: column;
+        }
+
+        &--margined {
+
+          &:first-child {
+            margin: 0 0 20px 0;
+          }
+
+        }
+
+      }
+
+    }
+
+    &__information {
+
+      &-wrap {
+        // Block model
+        margin: 0 0 25px 0;
+      }
+
+    }
 
   }
 

@@ -1,10 +1,14 @@
 // Main page
 @import "../../components/common.scss";
 
+@mixin text($size,$height) {
+  // Typography
+  font-size: $size;
+  line-height: $height;
+}
+
 // Slider
 .slider {
-  // Self variable
-  $s: &;
   // Block model
   padding: 0 0 90px 0;
 
@@ -108,7 +112,6 @@
 
   }
 
-
   &__collection {
     // Position
     display: flex;
@@ -143,6 +146,7 @@
     right: 99px;
     bottom: 36px;
     display: flex;
+    justify-content: flex-end;
     z-index: 0;
   }
 
@@ -163,6 +167,7 @@
       color: $color_white;
       font-size: 12px;
       font-weight: 700;
+      text-align: center;
       text-transform: uppercase;
     }
 
@@ -182,7 +187,15 @@
     font-family: $font-optional-1;
     font-size: 38px;
     font-weight: 700;
+    line-height: 46px;
     text-transform: uppercase;
+  }
+
+  &__carousel {
+    // Block model
+    width: 100%;
+    // Stylization
+    overflow: hidden;
   }
 
   &__list {
@@ -195,10 +208,11 @@
     &-item {
       // Position
       display: flex;
+      flex: 1 0 270px;
       justify-content: center;
       align-items: center;
       // Block model
-      width: 25%;
+      width: auto;
       height: 270px;
       margin: 0 20px 0 0;
       box-sizing: border-box;
@@ -215,17 +229,17 @@
 
       &--second {
         // Stylization
-        background: $color_meant url("./static/images/img_category_2.png") center no-repeat;
+        background: $color_wheat url("./static/images/img_category_2.png") center no-repeat;
       }
 
       &--third {
         // Stylization
-        background: $color_meant url("./static/images/img_category_3.png") center no-repeat;
+        background: $color_orange url("./static/images/img_category_3.png") center no-repeat;
       }
 
       &--fourth {
         // Stylization
-        background: $color_meant url("./static/images/img_category_4.png") center no-repeat;
+        background: $color_purple url("./static/images/img_category_4.png") center no-repeat;
       }
 
     }
@@ -249,62 +263,74 @@
 
   }
 
-
-  &__button {
+  &__nav {
     // Position
-    display: inline;
-    // Typography
-    font-size: 0;
-    // Block model
-    width: 37px;
-    height: 37px;
-    background: $color-blue;
-    // Animation
-    transition: box-shadow ease-in .4s;
+    display: flex;
 
-    &:hover {
-      // Stylization
-      cursor: pointer;
-      box-shadow: 2px 3px 5px $color_light-blue;
+    &-button {
+      // Position
+      display: inline;
+      flex: 0 0 auto;
+      // Typography
+      font-size: 0;
+      // Block model
+      width: 37px;
+      height: 37px;
+      margin: 0 5px 0 0;
+      background: $color-blue;
       // Animation
       transition: box-shadow ease-in .4s;
+
+      &:last-of-type {
+        // BLock model
+        margin: 0 20px 0 0;
+      }
+
+      &:hover {
+        // Stylization
+        cursor: pointer;
+        box-shadow: 2px 3px 5px $color_light-blue;
+        // Animation
+        transition: box-shadow ease-in .4s;
+      }
+
+      &:active {
+        // Stylization
+        box-shadow: none;
+      }
+
+      &-svg {
+        // Block model
+        width: 100%;
+
+        &:hover > &-path {
+          // Stylization
+          stroke: $color_brown;
+          // Animtation
+          transition: stroke ease-in .4s;
+        }
+
+        &-path {
+          // Stylization
+          fill: none;
+          stroke: $color_4;
+          stroke-width: 4px;
+          // Animtation
+          transition: stroke ease-in .4s;
+        }
+
+      }
+
     }
 
-    &:active {
-      // Stylization
-      box-shadow: none;
-    }
-
-    &-svg {
+    &-information {
+      // Position
+      display: inline-block;
+      vertical-align: top;
       // Block model
-      width: 100%;
-
-      &:hover > &-path {
-        // Stylization
-        stroke: $color_brown;
-        // Animtation
-        transition: stroke ease-in .4s;
-      }
-
-      &-path {
-        // Stylization
-        fill: none;
-        stroke: $color_4;
-        stroke-width: 4px;
-        // Animtation
-        transition: stroke ease-in .4s;
-      }
-
+      width: 50%;
     }
 
-  }
-
-  &__nav-information {
-    // Position
-    display: inline-block;
-    vertical-align: top;
-    // Block model
-    width: 50%;
   }
 
 }
@@ -332,6 +358,7 @@
     align-self: flex-start;
     // Block model
     padding: 27px 100px 0 0;
+    box-sizing: border-box;
   }
 
   &__title {
@@ -342,6 +369,7 @@
     font-family: $font-optional-1;
     font-size: 38px;
     font-weight: 700;
+    line-height: 46px;
     text-transform: uppercase;
   }
 
@@ -468,10 +496,10 @@
   &__wrap {
       // Position
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: row nowrap;
       align-items: flex-start;
       // Block model
-      width: 1180px;
+      width: auto;
       margin: 0 auto;
 
   }
@@ -493,7 +521,7 @@
     display: flex;
     flex-flow: column;
     align-items: flex-start;
-    flex-basis: 46%;
+    flex: 1;
     // Block model
     padding: 0 30px 35px 30px;
     margin: 0 57px 0 0;
@@ -531,13 +559,13 @@
 
   }
 
-
   &__contacts {
     // Position
     display: flex;
     flex-flow: column;
-    flex: 0;
+    flex: 1;
     // Block model
+    width: auto;
     padding: 0 30px;
     margin: 0;
     box-sizing: border-box;
@@ -564,6 +592,8 @@
     &-map {
       // Position
       display: flex;
+      // Stylization
+      overflow: hidden;
     }
 
   }
@@ -714,6 +744,7 @@
 
   &__input {
     // Block model
+    width: 100%;
     padding: 15px 0 11px 20px;
     box-sizing: border-box;
     // Typography
@@ -816,6 +847,7 @@
       // Position
       content: '';
       position: absolute;
+      top: 0;
       left: 0;
       // Block model
       width: 22px;
@@ -831,6 +863,7 @@
       // Position
       content: '';
       position: absolute;
+      top: 0;
       left: 0;
       // Block model
       width: 18px;
@@ -840,6 +873,503 @@
       border: solid 2px $color_2;
       border-radius: 4px;
       z-index: 1;
+    }
+
+  }
+
+}
+
+@media (max-width:1180px) {
+
+  .categories {
+
+    &__wrap {
+      // Block model
+      padding: 0 0 0 60px;
+    }
+
+  }
+
+}
+
+@media (max-width:990px) {
+
+  .slider {
+    // Block model
+    padding: 0 60px 90px;
+
+    &__wrap {
+      // Stylization
+      background: $color_wheat;
+    }
+
+    &__elements {
+      padding: 17px 0 0 0;
+    }
+
+    &__number {
+      // Typography
+      font-size: 48px;
+    }
+
+    &__stuff {
+
+      &-wrap {
+        // Position
+        right: 8px;
+      }
+
+      &-image {
+        // Block model
+        width: auto ;
+        height: 286px;
+      }
+
+    }
+
+  }
+
+  .categories {
+
+    &__wrap {
+      // Block model
+      padding-right: 0;
+      // Stylization
+      overflow: hidden;
+    }
+
+    &__title {
+      // Block model
+      margin: 0 0 24px 0;
+    }
+
+    &__list {
+      // Position
+      flex-flow: row nowrap;
+
+      &-item {
+        // Position
+        flex: 0 0 auto;
+        // Block model
+        width: 270px;
+      }
+
+    }
+
+    &__nav {
+
+      &-information {
+          // Block model
+          width: auto;
+          padding: 0 60px 0 0;
+          box-sizing: border-box;
+          // Typography
+          font-size: 14px;
+      }
+
+    }
+
+  }
+
+  .benefits {
+
+    &__side {
+      // Position
+      flex: 0 0 258px;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      &-image {
+        // Block model
+        height: auto;
+      }
+
+    }
+
+    &__description {
+      // Typography
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &__information {
+      // Block model
+      padding-right: 0;
+    }
+
+  }
+
+  .partners {
+
+    &__image {
+      // Block model
+      width: 70%;
+      height: auto;
+    }
+
+  }
+
+  .about {
+
+    &__wrap {
+      // Position
+      flex-flow: row nowrap;
+      // Block model
+      width: auto;
+    }
+
+    &__information {
+      // Block model
+      margin: 0 20px 0 0;
+      // Stylization
+      background: linear-gradient(0deg,rgba(112,187,220,.2) 100px,rgba(112,187,220,.2) 94%,transparent 94%);
+
+      &-title {
+        // Typography
+        font-size: 30px;
+      }
+
+    }
+
+    &__contacts {
+      // Stylization
+      background: linear-gradient(0deg,transparent 0,transparent 40%,rgba(112,187,220,.2) 40%,rgba(112,187,220,.2) 95%,transparent 95%,transparent 100px);
+
+      &-title {
+        // Typography
+        font-size: 30px;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .slider {
+    // Block model
+    padding: 0 60px 60px;
+
+    &__wrap {
+      // Position
+      // flex-flow: row-reverse wrap;
+    }
+
+    &__elements {
+      width: 100%;
+    }
+
+    &__number {
+      // Block model
+      margin: 0 20px 0 0;
+      // Typography
+      text-align: right;
+    }
+
+    &__content {
+      // Position
+      flex: 1;
+      flex-flow: row-reverse;
+      // Block model
+      padding: 0 20px;
+    }
+
+    &__nav {
+      // Position
+      flex: 1;
+      align-items: flex-end;
+      // Block model
+      margin: 0;
+    }
+
+    &__collection {
+      // Block model
+      margin: 0 0 188px 0;
+    }
+
+    &__stuff {
+
+      &-image {
+        // Block model
+        width: 80%;
+        height: 100%;
+      }
+
+    }
+
+  }
+
+  .categories {
+    // Block model
+    padding: 0 0 60px 0;
+
+    &__title {
+      // Typography
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    &__nav {
+
+      &-information {
+        // Block model
+        padding: 0;
+      }
+
+    }
+
+  }
+
+  .benefits {
+
+    &__title {
+      @include text(36px,44px);
+
+    }
+
+  }
+
+  .about {
+
+    &__information {
+
+      &-title {
+        @include text(30px,37px);
+      }
+
+    }
+
+    &__contacts {
+
+      &-title {
+        @include text(30px,37px);
+      }
+
+    }
+
+  }
+
+  .feedback {
+
+    &__close {
+      // Position
+      top: -25px;
+      right: 0;
+    }
+
+  }
+
+}
+
+@media (max-width:700px) {
+
+  .benefits {
+    // Block model
+    padding: 0 0 80px 0;
+
+    &__wrap {
+      // Position
+      flex-flow: column;
+    }
+
+    &__side {
+      // Position
+      flex: 1;
+      // Block model
+      margin: 0;
+
+      &-image {
+
+      }
+
+    }
+
+    &__information {
+      // Block model
+      padding: 20px 0 0 0;
+      margin: 0 0 0 -60px;
+    }
+
+    &__title {
+      // Block model
+      margin: 0 0 20px 0;
+    }
+
+  }
+
+  .partners {
+
+    &__wrap {
+      // Block model
+      padding: 0 20px;
+    }
+
+    &__list {
+      // Position
+      flex-flow: row wrap;
+    }
+
+    &__item {
+      // Block model
+      width: 50%;
+      margin: 0 0 30px 0;
+
+      &:nth-of-type(n+3) {
+        // Block model
+        margin: 0;
+      }
+
+      &:first-of-type {
+        // Position
+        justify-content: center;
+      }
+
+      &:last-of-type {
+        // Position
+        justify-content: center;
+      }
+
+    }
+
+    &__image {
+      // Block model
+      width: 75%;
+    }
+
+  }
+
+  .about {
+    // Position
+    flex-flow: column;
+
+    &__wrap {
+      // Position
+      flex-flow: column;
+      // Block model
+      padding: 0;
+    }
+
+    &__information {
+      // Block model
+      margin: 0 0 50px 0;
+
+    }
+
+    &__contacts {
+      // Block model
+      width: auto;
+
+    }
+
+  }
+
+  .feedback {
+
+    &__wrap {
+      // Block model
+      width: auto;
+    }
+
+  }
+
+}
+
+@media (max-width:580px) {
+
+  .slider {
+    // Block model
+    padding: 0 0 80px 0;
+
+  }
+
+  .benefits {
+
+    &__title {
+      @include text(24px,29px);
+    }
+
+  }
+
+}
+
+@media (max-width:480px) {
+
+  .slider {
+
+    &__title {
+      @include text(36px,110%);
+      // Block model
+      margin: 0 0 20px 0;
+    }
+
+  }
+
+  .categories {
+    // Block model
+    padding-bottom: 80px;
+
+    &__wrap {
+      // Block model
+      padding: 0 0 0 20px;
+    }
+
+    &__title {
+      @include text(24px,29px);
+    }
+
+  }
+
+  .about {
+
+    &__information {
+
+      &-title {
+        @include text(24px,29px);
+      }
+
+    }
+
+    &__contacts {
+
+      &-title {
+        @include text(24px,29px);
+      }
+
+    }
+
+  }
+
+  .feedback {
+
+    &__form {
+      // Block model
+      padding: 25px;
+    }
+
+    &__wrap {
+      // Block model
+      padding: 0 20px;
+    }
+
+    &__wrapper {
+
+      &--half {
+        // Position
+        flex-flow: column;
+      }
+
+      &--margined {
+
+        &:first-child {
+          // Block model
+          margin: 0 0 18px 0;
+        }
+
+      }
+
     }
 
   }

@@ -1,13 +1,13 @@
 // Blog page styles
 @import "../../components/common.scss";
 
+@mixin text($size,$height) {
+  // Typography
+  font-size: $size;
+  line-height: $height;
+}
+
 .blog {
-    // Self variable
-    $s: &;
-
-    &__wrap {
-
-    }
 
     &__title {
       // Block model
@@ -35,8 +35,9 @@
 
     &__item {
       // Position
-      flex: 1;
+      flex: 0 1 32%;
       // Block model
+      width: 32%;
       margin: 0 20px 40px 0;
       // Block model
       box-sizing: border-box;
@@ -100,8 +101,111 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
+      align-items: end;
       // Block model
       margin: 0 0 60px 0;
     }
 
   }
+
+@media (max-width:1140px) {
+
+  .blog {
+
+    &__item {
+      // Position
+      flex: 1 0 auto;
+      // Block model
+      width: 46%;
+
+      &:nth-child(2n) {
+        // Block model
+        margin-right: 0;
+      }
+
+      &:nth-child(3n) {
+        // Block model
+        margin-right: 20px;
+      }
+
+      &:nth-child(n+5) {
+        // Block model
+        margin-bottom: 20px;
+      }
+
+    }
+
+    &__image {
+      // Block model
+      width: 100%;
+      height: auto;
+    }
+
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .blog {
+
+    &__title {
+      @include text(36px,44px);
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 30px 0;
+    }
+
+  }
+
+}
+
+@media (max-width:580px) {
+
+  .blog {
+
+    &__title {
+      @include text(24px,29px);
+      // Block model
+      margin: 0 0 10px 0;
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 20px 0;
+    }
+
+    &__wrap {
+      // Block model
+      padding: 0 20px;
+    }
+
+    &__item {
+      // Position
+      flex: auto;
+      // Block model
+      width: auto;
+
+      &:nth-child(1n) {
+        margin: 0 0 25px 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+    }
+
+    &__link {
+      @include text(18px,22px);
+    }
+
+    &__description {
+      @include text(16px,22px);
+    }
+
+  }
+
+}
