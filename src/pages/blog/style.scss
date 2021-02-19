@@ -114,9 +114,9 @@
 
     &__item {
       // Position
-      flex: 1 0 auto;
+      flex: 1 0 45%;
       // Block model
-      width: 46%;
+      width: auto;
 
       &:nth-child(2n) {
         // Block model
@@ -131,6 +131,10 @@
       &:nth-child(n+5) {
         // Block model
         margin-bottom: 20px;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
       }
 
     }
