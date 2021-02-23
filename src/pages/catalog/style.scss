@@ -27,54 +27,46 @@
   }
 
   &__list {
-    // Position
-    display: flex;
-    flex-flow: row wrap;
+    // // Position
+    // display: flex;
+    // flex-flow: row wrap;
   }
 
   &__item {
-    // Position
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // Block model
-    width: 280px;
-    height: 270px;
-    margin: 0 20px 20px 0;
-    box-sizing: border-box;
 
     &--first {
       // Stylization
       background: $color_meant url("/static/images/img_category_1.png") center no-repeat;
+      background-size: auto;
     }
 
     &--second {
       // Stylization
       background: $color_wheat url("/static/images/img_category_2.png") center no-repeat;
+      background-size: auto;
     }
 
     &--third {
       // Stylization
       background: $color_orange url("/static/images/img_category_3.png") center no-repeat;
+      background-size: auto;
     }
 
     &--fourth {
-      // Block model
-      margin: 0 20px 0 200px;
       // Stylization
       background: $color_purple url("/static/images/img_category_4.png") center no-repeat;
+      background-size: auto;
     }
 
     &--fifth {
-      // Block model
-      margin: 0 20px 0 0;
       // Stylization
       background: $color_pink url("/static/images/img_category_5.png") center no-repeat;
+      background-size: auto;
     }
 
     &--sixth {
-      // Block model
-      margin: 0 20px 0 0;
+      // // Block model
+      // margin: 0 20px 0 0;
       // Stylization
       background: $color_light-blue url("/static/images/img_category_6.png") center no-repeat;
     }
@@ -106,12 +98,10 @@
 }
 
 .description {
-  // Block model
-  margin: 0 0 55px 0;
 
   &__wrap {
     // Block model
-    padding: 0 300px 0 200px;
+    margin-bottom: 60px;
     box-sizing: border-box;
   }
 
@@ -134,43 +124,6 @@
 
 }
 
-@media (max-width:1170px) {
-
-  .catalog {
-
-    &__item {
-      // Position
-      flex: 1 auto;
-      // Block model
-      width: 25%;
-      padding: 0 20px;
-      // Stylization
-      background-size: 75%;
-
-      &:nth-child(3n) {
-        // Block model
-        margin-right: 0;
-      }
-
-      &--fourth {
-        margin-left: 0;
-      }
-
-    }
-
-  }
-
-  .description {
-
-    &__wrap {
-      // Block model
-      padding: 0 60px;
-    }
-
-  }
-
-}
-
 @media (max-width:768px) {
 
   .catalog {
@@ -188,26 +141,26 @@
       margin: 0 0 30px 0;
     }
 
-    &__item {
-      // Position
-      flex: 1 auto;
-      // Block model
-      width: 25%;
-      height: 200px;
-      padding: 0 20px;
-      // Stylization
-      background-size: 75%;
-
-      &:nth-child(3n) {
-        // Block model
-        margin-right: 0;
-      }
-
-      &--fourth {
-        margin-left: 0;
-      }
-
-    }
+    // &__item {
+    //   // Position
+    //   flex: 1 auto;
+    //   // Block model
+    //   width: 25%;
+    //   height: 200px;
+    //   padding: 0 20px;
+    //   // Stylization
+    //   background-size: 75%;
+    //
+    //   &:nth-child(3n) {
+    //     // Block model
+    //     margin-right: 0;
+    //   }
+    //
+    //   &--fourth {
+    //     margin-left: 0;
+    //   }
+    //
+    // }
 
     &__link {
       // Typography
@@ -251,24 +204,35 @@
     }
 
     &__item {
-      // Block model
-      width: 44%;
 
-      &:nth-child(2n) {
-        margin: 0 0 20px 0;
+      &--first {
+        // Stylization
+        background-size: 90%;
       }
 
-      &:nth-child(3n) {
-        margin-right: 20px;
+      &--second {
+        // Stylization
+        background-size: 60%;
       }
 
-      &:nth-child(6) {
-        // Block model
-        margin-right: 0;
+      &--third {
+        // Stylization
+        background-size: 50%;
       }
 
-      &:last-child {
-        margin-bottom: 0;
+      &--fourth {
+        // Stylization
+        background-size: 70%;
+      }
+
+      &--fifth {
+        // Stylization
+        background-size: 70%;
+      }
+
+      &--sixth {
+        // Stylization
+        background-size: 90%;
       }
 
     }
@@ -277,15 +241,52 @@
 
   .description {
 
-    &__wrap {
-      // Block model
-      padding: 0 20px;
-    }
-
     &__title {
       @include title(24px,29px);
       // Block model
       margin: 0 0 15px 0;
+    }
+
+  }
+
+}
+
+@media (max-width:375px) {
+
+  .catalog {
+
+    &__item {
+
+      &--first {
+        // Stylization
+        background-size: 100%;
+      }
+
+      &--second {
+        // Stylization
+        background-size: 100%;
+      }
+
+      &--third {
+        // Stylization
+        background-size: 100%;
+      }
+
+      &--fourth {
+        // Stylization
+        background-size: 100%;
+      }
+
+      &--fifth {
+        // Stylization
+        background-size: 100%;
+      }
+
+      &--sixth {
+        // Stylization
+        background-size: 100%;
+      }
+
     }
 
   }
