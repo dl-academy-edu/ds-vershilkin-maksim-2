@@ -141,27 +141,6 @@
       margin: 0 0 30px 0;
     }
 
-    // &__item {
-    //   // Position
-    //   flex: 1 auto;
-    //   // Block model
-    //   width: 25%;
-    //   height: 200px;
-    //   padding: 0 20px;
-    //   // Stylization
-    //   background-size: 75%;
-    //
-    //   &:nth-child(3n) {
-    //     // Block model
-    //     margin-right: 0;
-    //   }
-    //
-    //   &--fourth {
-    //     margin-left: 0;
-    //   }
-    //
-    // }
-
     &__link {
       // Typography
       font-size: 18px;
@@ -256,36 +235,8 @@
   .catalog {
 
     &__item {
-
-      &--first {
-        // Stylization
-        background-size: 100%;
-      }
-
-      &--second {
-        // Stylization
-        background-size: 100%;
-      }
-
-      &--third {
-        // Stylization
-        background-size: 100%;
-      }
-
-      &--fourth {
-        // Stylization
-        background-size: 100%;
-      }
-
-      &--fifth {
-        // Stylization
-        background-size: 100%;
-      }
-
-      &--sixth {
-        // Stylization
-        background-size: 100%;
-      }
+      // Stylization
+      background-size: 100%;
 
     }
 
