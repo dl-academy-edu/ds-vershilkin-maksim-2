@@ -1,0 +1,737 @@
+// Grid page
+@import "../../components/common.scss";
+
+@mixin text($size,$height) {
+  // Typography
+  font-size: $size;
+  line-height: $height;
+}
+
+.common {
+
+  &__title {
+    // Block model
+    margin: 0 0 15px 0;
+    // Typography
+    font-family: $font-optional-1;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__nav {
+    // Block model
+    margin: 0 0 50px 0;
+  }
+
+}
+
+.grid {
+    // Position
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 430px 430px 430px 215px;
+    grid-template-areas: "phone phone evaporator evaporator"
+                         "keyboard mac mac floppy"
+                         "notebook notebook gamepad floppy"
+                         "social tv tv tv";
+
+    &__item-a {
+      // Position
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr 80px;
+      grid-template-rows: 80px auto;
+      grid-area: phone;
+      // Stylization
+      background-color: $color_white;
+
+      &-info {
+        // Position
+        grid-column: 2/2;
+        grid-row: 2/2;
+        // Block model
+        padding: 50px 0 0 0;
+      }
+
+      &-tag {
+        // Block model
+        margin: 0 0 10px 0;
+        // Typography
+        color: $color-light-grey-2;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      &-title {
+        // Block model
+        margin: 0 0 20px 0;
+        // Typography
+        font-size: 22px;
+        font-weight: medium;
+      }
+
+      &-link {
+        // Typography
+        color: $color-light-grey-2;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      &-image {
+        // Position
+        display: flex;
+        align-self: flex-end;
+        justify-content: flex-end;
+
+        grid-column: 3/3;
+        grid-row: 2/2;
+      }
+
+    }
+
+    &__item-b {
+      // Position
+      grid-area: evaporator;
+      display: grid;
+      // Block model
+      padding: 7% 14%;
+      box-sizing: border-box;
+      // Stylization
+      background-color: #F7F8FA;
+
+      &-info {
+        // Position
+        grid-column: 2/2;
+        grid-row: 2/2;
+        // Typography
+        text-align:center;
+      }
+
+      &-tag {
+        // Block model
+        margin: 0 0 20px 0;
+        // Typography
+        color: $color-light-grey-2;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      &-title {
+        // Block model
+        margin: 0 0 10px 0;
+        // Typography
+        font-size: 48px;
+        font-weight: bold;
+      }
+
+      &-link {
+        // Position
+        position: relative;
+        // Typography
+        color: $color_ligh-blue;
+        font-size: 14px;
+        font-weight: 500;
+
+        &::after {
+          // Position
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          // Block model
+          width: 100%;
+          height: 1px;
+          background-color: $color_ligh-blue;
+        }
+
+      }
+
+    }
+
+    &__item-c {
+      // Position
+      grid-area: keyboard;
+      display: grid;
+      grid-template-columns: 18px auto 18px;
+      grid-template-rows: 84px auto 84px;
+      // Stylization
+      background-color: $color_light_red;
+
+      &-wrap {
+        // Position
+        grid-column: 2/2;
+        grid-row: 2/2;
+        // Typography
+        text-align: center;
+      }
+
+      &-image {
+        // Block model
+        margin: 0 0 10px 0;
+      }
+
+      &-title {
+        // Block model
+        margin: 0 0 20px 0;
+        // Typography
+        color: $color_white;
+        font-size: 22px;
+      }
+
+      &-link {
+        // Typography
+        color: $color_yellow;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+    }
+
+    &__item-d {
+      // Position
+      grid-area: mac;
+      display: grid;
+      grid-template-columns: 95px auto 110px auto 95px;
+      grid-template-rows: 108px auto 164px;
+      // grid-area: "."
+      // Stylization
+      background-color: $color_white;
+
+      &-first {
+        // Position
+        grid-area: first;
+        grid-column: 2/2;
+        grid-row: 2/2;
+      }
+
+      &-tag {
+        // Block model
+        margin: 0 0 20px 0;
+        // Typography
+        color: $color-light-grey-2;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      &-title {
+        // Typography
+        font-size: 22px;
+        font-weight: medium;
+      }
+
+      &-text {
+        // Block model
+        margin: 0 0 20px 0;
+        // Typography
+        color: $color_light-grey-2;
+        font-size: 14px;
+        font-weight: medium;
+      }
+
+      &-link {
+        // Position
+        position: relative;
+        // Typography
+        color: $color_ligh-blue;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      &-second {
+        // Position
+        grid-area: second;
+        grid-column: 4/4;
+        grid-row: 2/2;
+      }
+
+      &-image {
+        // Position
+        grid-area: image;
+        grid-column: 1/2;
+        grid-row: 3/3;
+      }
+
+    }
+
+    &__item-e {
+      // Position
+      grid-area: floppy;
+      display: grid;
+      // Block model
+      padding: 160px 20px;
+      // Typography
+      color: $color_white;
+      // Stylization
+      background-color: $color_light_purple;
+
+      &-wrap {
+        // Position
+        text-align: center;
+      }
+
+      &-graphics {
+        // Position
+        display: grid;
+        grid-template-columns: auto;
+        align-items: flex-start;
+        // Block model
+        width: 300px;
+        height: 300px;
+        margin: 0 auto 20px;
+        // Stylization
+        background-color: #8066B0;
+        border-radius: 50%;
+      }
+
+      &-tag {
+        // Position
+        justify-self: center;
+        // Block model
+        margin: 30px 0 0 0;
+        padding: 5px 15px;
+        // Typography
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        // Stylization
+        background-color: $color_light_purple;
+        border-radius: 20px;
+      }
+
+      &-ctr {
+        // Position
+        align-self: flex-start;
+        // Block model
+        margin: -20px 0 0 0;
+        // Typography
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      &-title {
+        // Block model
+        margin: 0 0 10px 0;
+        // Typography
+        font-size: 32px;
+      }
+
+      &-text {
+        // Block model
+        width: 90%;
+        margin: 0 auto 30px;
+        // Typography
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      &-link {
+        // Position
+        display: inline-block;
+        // Block model
+        padding: 20px 40px;
+        // Typography
+        color: $color_black;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        // Stylization
+        opacity: .9;
+        box-shadow: $color_shadow 5px 5px 5px;
+        background-color: $color_yellow;
+        border-radius: 30px;
+        // Animation
+        transition: opacity .4s ease-in,
+                    box-shadow .4s ease-in;
+
+        &:hover {
+          // Stylization
+          opacity: 1;
+        }
+
+        &:active {
+          // Stylization
+          outline: none;
+          box-shadow: $color_shadow 0 0 0;
+        }
+
+      }
+
+    }
+
+    &__item-f {
+      // Position
+      grid-area: notebook;
+      position: relative;
+      // Typography
+      color: $color_white;
+      // Stylization
+      background-color: #93B7B7;
+
+      &-wrap {
+        // Position
+        display: grid;
+        height: 100%;
+      }
+
+      &-tag {
+        // Position
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        // Block model
+        padding: 4px 5px;
+        // Typography
+        font-size: 8px;
+        font-weight: bold;
+        text-transform: uppercase;
+        // Stylization
+        background-color: $color_light_red;
+        border-radius: 3px;
+      }
+
+      &-title {
+        // Block model
+        margin: 70px 0 30px 0;
+        // Typography
+        text-align: center;
+      }
+
+      &-picture {
+        // Position
+        align-self: flex-end;
+        // Stylization
+        overflow: hidden;
+      }
+
+      &-image {
+        // Block model
+        margin: 0 0 -3px 0;
+      }
+
+    }
+
+    &__item-g {
+      // Position
+      grid-area: gamepad;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto auto;
+      // Stylization
+      background-color: #F7F8FA;
+
+      &-wrap {
+        // Position
+        grid-column: 2/2;
+        grid-row: 2/2;
+        // Typography
+        text-align: center;
+      }
+
+      &-picture {
+        // Block model
+        margin: 0 0 10px 0;
+      }
+
+      &-title {
+        // Block model
+        margin: 0 0 20px 0;
+        // Typography
+        font-size: 22px;
+        font-weight: 500;
+      }
+
+      &-link {
+        // Typography
+        color: $color_ligh-blue;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: upperase;
+      }
+
+    }
+
+    &__item-h {
+      // Position
+      grid-area: social;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto auto;
+      // Stylization
+      background-color: #F7F8FA;
+
+      &-wrap {
+        // Position
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-column: 2/2;
+        grid-row: 2/2;
+        // Typography
+        text-align: center;
+      }
+
+      &-svg {
+        // Block model
+        width: 59px;
+        height: 59px;
+        margin: 0 auto 15px;
+        // Stylization
+        fill: none;
+      }
+
+      &-link {
+        // Position
+        align-self: flex-start;
+        // Typography
+        color: $color_black;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+    }
+
+    &__item-k {
+      // Position
+      grid-area: tv;
+      // Typography
+      color: $color_white;
+      // Stylization
+      background-color: #2C2C2C;
+
+      &-wrap {
+        // Position
+        display: grid;
+        grid-template-columns: 2fr 80px 1fr 1fr;
+        align-items: center;
+      }
+
+      &-picture {
+        // Position
+        grid-column: 1/1;
+        display: grid;
+        justify-content: flex-end;
+      }
+
+      &-title {
+        // Position
+        grid-column: 3/3;
+        // Typography
+        font-size: 22px;
+        font-weight: 500;
+      }
+
+    }
+
+}
+
+@media (max-width:1200px) {
+
+  .grid {
+    // Position
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto repeat(5, 1fr) 215px;
+    grid-template-areas: "evaporator evaporator"
+                         "phone phone"
+                         "keyboard gamepad"
+                         "mac mac"
+                         "notebook floppy"
+                         "social floppy"
+                         "tv tv";
+
+    &__item-a {
+
+    }
+
+    &__item-b {
+
+      &-title {
+        // Typography
+        font-size: 36px;
+      }
+
+    }
+
+    &__item-f {
+
+      &-image {
+        // Block model
+        width: 100%;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width:690px) {
+
+  .common {
+
+    &__title {
+      @include text(36px,44px);
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 30px 0;
+    }
+
+
+  }
+
+  .grid {
+    // Position
+    grid-template-columns: auto;
+    grid-template-rows: repeat(9, auto);
+    grid-template-areas: "evaporator" "phone" "keyboard" "gamepad"
+                         "mac" "notebook" "social" "floppy" "tv";
+    // Block model
+    box-sizing: border-box;
+
+    &__item-a {
+      // Position
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      // Block model
+      padding-left: 20px;
+      padding-right: 20px;
+
+      &-info {
+        // Posisiton
+        grid-column: 1/1;
+        grid-row: 1/1;
+        // Block model
+        margin: 0 0 40px 0;
+      }
+
+      &-image {
+        // Posisiton
+        grid-column: 1/1;
+        grid-row: 2/2;
+        justify-content: center;
+      }
+
+    }
+
+    &__item-b {
+      // Block model
+      padding-left: 20px;
+      padding-right: 20px;
+
+      &-info {
+        // Typography
+        text-align: left;
+      }
+
+    }
+
+    &__item-d {
+      // Position
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto;
+      // Block model
+      padding: 30px 20px;
+
+      &-first {
+        // Position
+        grid-column: 1/1;
+        grid-row: 1/1;
+        // Block model
+        width: 50%;
+        margin: 0 0 40px 0;
+      }
+
+      &-second {
+        // Position
+        grid-column: 1/1;
+        grid-row: 3/3;
+      }
+
+      &-image {
+        // Position
+        grid-column: 1/1;
+        grid-row: 2/2;
+        // Block model
+        margin: 0 0 30px -20px;
+      }
+
+    }
+
+    &__item-e {
+      // Block model
+      padding: 30px 20px;
+    }
+
+    &__item-g {
+      // Block model
+      padding: 40px 0 30px;
+    }
+
+    &__item-h {
+      // Block model
+      padding: 50px 0;
+    }
+
+    &__item-k {
+      // Position
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      // Block model
+      padding: 0 20px 30px;
+
+      &-wrap {
+        // Position
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+      }
+
+      &-picture {
+        // Position
+        grid-column: 1/1;
+        grid-row: 1/1;
+        justify-content: center;
+        // Block model
+        margin: 0 0 0 -100px;
+      }
+
+      &-title {
+        // Position
+        grid-column: 1/1;
+        grid-row: 2/2;
+        // Block model
+        width: 80%;
+        margin: 0 auto;
+        // Typography
+        text-align: center;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width:580px) {
+
+  .common {
+
+    &__title {
+      @include text(36px,44px);
+    }
+
+    &__nav {
+      // Block model
+      margin: 0 0 30px 0;
+    }
+
+
+  }
+
+}
