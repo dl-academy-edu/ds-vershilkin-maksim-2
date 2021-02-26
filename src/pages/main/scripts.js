@@ -16,7 +16,6 @@
 
     let modal = document.querySelector(`.${elm}`);
     let hidingClass = "feedback--hidden";
-
     if (e.keyCode == 27 && !modal.classList.contains(hidingClass)) {
         modal.classList.add(hidingClass);
         document.body.style.overflow = "scroll";
@@ -32,6 +31,10 @@
     let modal = document.querySelector(`.${elm}`);
     let hidingClass = "feedback--hidden";
     let firstInput;
+
+    modal.style.display = "fixed";
+    modal.style.top = window.pageYOffset + 'px';
+    console.log(window.pageYOffset);
 
     if (e.target.classList.contains(buttonName)) {
       modal.classList.remove(hidingClass);
